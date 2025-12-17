@@ -8,13 +8,11 @@
 
   <style>
     :root {
-      /* ===== メイン：強い黄金色（軽いグラデーション） ===== */
-      --gold-main-1: #f7d86a;
-      --gold-main-2: #d4a017;
+      /* ===== メイン色：画像左（強い黄色） ===== */
+      --main-yellow: #ffeb00;
 
-      /* ===== サブ：黄色・金色 ===== */
-      --gold-sub-1: #ffef9a;
-      --gold-sub-2: #f2c94c;
+      /* ===== サブ色：画像右（オレンジ金色） ===== */
+      --sub-gold: #ffb000;
 
       --text: #333;
       --gray: #fafafa;
@@ -39,10 +37,9 @@
       background: linear-gradient(
         180deg,
         #ffffff 0%,
-        var(--gold-sub-1) 100%
+        var(--main-yellow) 100%
       );
       padding: 80px 0 100px;
-      overflow: visible;
     }
 
     .hero-inner {
@@ -59,11 +56,10 @@
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
-      white-space: nowrap;   /* ← 強制1行 */
-      z-index: 2;
+      z-index: 1;
     }
 
-    /* クレヨン風・金色マーカー（ヒーロー） */
+    /* クレヨン風マーカー（サブ色） */
     .hero h1::after {
       content: "";
       position: absolute;
@@ -71,14 +67,10 @@
       bottom: 6px;
       width: 106%;
       height: 18px;
-      background: linear-gradient(
-        90deg,
-        var(--gold-main-1),
-        var(--gold-main-2)
-      );
+      background: var(--sub-gold);
       opacity: 0.85;
       z-index: -1;
-      border-radius: 14px 8px 12px 10px;
+      border-radius: 14px 10px 12px 8px;
       filter: blur(0.4px);
     }
 
@@ -102,14 +94,14 @@
     .btn-main {
       background: linear-gradient(
         135deg,
-        var(--gold-main-1),
-        var(--gold-main-2)
+        var(--main-yellow),
+        var(--sub-gold)
       );
     }
 
     .btn-sub {
       background: #fff;
-      border: 3px solid var(--gold-main-2);
+      border: 3px solid var(--sub-gold);
     }
 
     .hero img {
@@ -133,7 +125,7 @@
       position: relative;
     }
 
-    /* クレヨン風・金色マーカー（共通） */
+    /* クレヨン風マーカー（サブ色） */
     .section-title::after {
       content: "";
       position: absolute;
@@ -141,39 +133,11 @@
       left: -3%;
       width: 106%;
       height: 16px;
-      background: linear-gradient(
-        90deg,
-        var(--gold-main-1),
-        var(--gold-main-2)
-      );
+      background: var(--sub-gold);
       opacity: 0.85;
       z-index: -1;
       border-radius: 12px 14px 8px 10px;
       filter: blur(0.4px);
-    }
-
-    /* 安心して使える理由：明示的にマーカー */
-    .marker-crayon {
-      position: relative;
-      display: inline-block;
-    }
-
-    .marker-crayon::after {
-      content: "";
-      position: absolute;
-      bottom: 6px;
-      left: -3%;
-      width: 106%;
-      height: 18px;
-      background: linear-gradient(
-        90deg,
-        var(--gold-main-1),
-        var(--gold-main-2)
-      );
-      opacity: 0.9;
-      z-index: -1;
-      border-radius: 14px 8px 12px 10px;
-      filter: blur(0.5px);
     }
 
     .section-lead {
@@ -196,13 +160,13 @@
       padding: 34px;
       border-radius: 22px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-top: 8px solid var(--gold-main-2);
+      border-top: 8px solid var(--sub-gold);
     }
 
     .card h3 {
       font-size: 1.35rem;
       margin-bottom: 15px;
-      color: var(--gold-main-2);
+      color: var(--sub-gold);
     }
 
     /* ===== 利用の流れ ===== */
@@ -231,7 +195,7 @@
     .flow-arrow {
       text-align: center;
       font-size: 1.6rem;
-      color: var(--gold-main-2);
+      color: var(--sub-gold);
       margin: 8px 0 12px;
       font-weight: bold;
     }
@@ -268,15 +232,8 @@
         grid-template-columns: 1fr;
         text-align: center;
       }
-
-      .flow-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-        white-space: nowrap; /* モバイルでも1行 */
-      }
+      .hero h1 { font-size: 2.2rem; }
+      .flow-wrapper { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -287,7 +244,8 @@
   <div class="container hero-inner">
     <div>
       <h1>
-        あなたのスキルが買われ、あなたの必要なスキルが見つかる場所。
+        あなたのスキルが買われ、<br>
+        あなたの必要なスキルが見つかる場所。
       </h1>
       <p>スキルマッチングは、オンライン専門職に特化した安全・安心なマッチングプラットフォームです。</p>
       <div class="hero-buttons">
@@ -315,7 +273,7 @@
 
 <section class="gray">
   <div class="container" style="text-align:center;">
-    <h2 class="section-title marker-crayon">安心して使える理由</h2>
+    <h2 class="section-title">安心して使える理由</h2>
     <p class="section-lead">すべての取引は安全設計。</p>
     <div class="card-grid">
       <div class="card"><h3>Stripe決済</h3><p>世界標準の決済基盤を採用。</p></div>
@@ -333,14 +291,10 @@
       <div>
         <h3>クライアント</h3>
         <div class="flow-vertical">
-          <div class="flow-step">案件作成</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">マッチング</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">報酬をお預け</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">納品・検収</div>
-          <div class="flow-arrow">↓</div>
+          <div class="flow-step">案件作成</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">マッチング</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">報酬をお預け</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">納品・検収</div><div class="flow-arrow">↓</div>
           <div class="flow-step">支払い完了</div>
         </div>
       </div>
@@ -348,12 +302,9 @@
       <div>
         <h3>ワーカー</h3>
         <div class="flow-vertical">
-          <div class="flow-step">応募・依頼受領</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">契約成立</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">業務・納品</div>
-          <div class="flow-arrow">↓</div>
+          <div class="flow-step">応募・依頼受領</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">契約成立</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">業務・納品</div><div class="flow-arrow">↓</div>
           <div class="flow-step">報酬受取</div>
         </div>
       </div>
@@ -365,14 +316,8 @@
   <div class="container" style="text-align:center;">
     <h2 class="section-title">よくある質問</h2>
     <div class="faq">
-      <div class="faq-item">
-        <h4>支払いはいつ確定しますか？</h4>
-        <p>検収完了後に確定します。</p>
-      </div>
-      <div class="faq-item">
-        <h4>途中キャンセルはできますか？</h4>
-        <p>条件に応じて返金されます。</p>
-      </div>
+      <div class="faq-item"><h4>支払いはいつ確定しますか？</h4><p>検収完了後に確定します。</p></div>
+      <div class="faq-item"><h4>途中キャンセルはできますか？</h4><p>条件に応じて返金されます。</p></div>
     </div>
   </div>
 </section>
