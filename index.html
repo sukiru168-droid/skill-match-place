@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>スキルマッチング｜あなたのスキルが買われ、あなたの必要なスキルが見つかる場所。</title>
+  <title>スキルマッチング｜あなたのスキルが買われ、あなたに必要なスキルが見つかる場所。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images/cat.png">
 
@@ -49,18 +49,22 @@
       align-items: center;
     }
 
+    /* タイトル2行にマーカー */
     .hero h1 {
       font-size: 2.7rem;
       font-weight: 900;
-      line-height: 1.25;
+      line-height: 1.3;
       margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-      z-index: 1;
     }
 
-    /* クレヨン風マーカー（サブ色） */
-    .hero h1::after {
+    .hero h1 span {
+      position: relative;
+      display: block;
+      z-index: 1;
+      margin-bottom: 6px;
+    }
+
+    .hero h1 span::after {
       content: "";
       position: absolute;
       left: -3%;
@@ -125,7 +129,6 @@
       position: relative;
     }
 
-    /* クレヨン風マーカー（サブ色） */
     .section-title::after {
       content: "";
       position: absolute;
@@ -234,6 +237,10 @@
       }
       .hero h1 { font-size: 2.2rem; }
       .flow-wrapper { grid-template-columns: 1fr; }
+      .hero-buttons a {
+        display: block;
+        margin: 12px auto;
+      }
     }
   </style>
 </head>
@@ -244,8 +251,8 @@
   <div class="container hero-inner">
     <div>
       <h1>
-        あなたのスキルが買われ、<br>
-        あなたの必要なスキルが見つかる場所。
+        <span>あなたのスキルが買われ、</span>
+        <span>あなたに必要なスキルが見つかる場所。</span>
       </h1>
       <p>スキルマッチングは、オンライン専門職に特化した安全・安心なマッチングプラットフォームです。</p>
       <div class="hero-buttons">
@@ -267,6 +274,8 @@
       <div class="card"><h3>オンライン専門職に特化</h3><p>リモート完結のスキルに最適。</p></div>
       <div class="card"><h3>安全な決済管理</h3><p>検収完了後に支払いが確定。</p></div>
       <div class="card"><h3>直接依頼も可能</h3><p>案件募集・個別依頼の両対応。</p></div>
+      <div class="card"><h3>アプリ内完結</h3><p>応募・契約・納品、報酬受取や支払を全てアプリ内で完結。</p></div>
+      <div class="card"><h3>自由な働き方</h3><p>案件単位で働けるので、副業やスキマ時間に最適。</p></div>
     </div>
   </div>
 </section>
