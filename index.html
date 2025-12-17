@@ -8,9 +8,14 @@
 
   <style>
     :root {
-      --yellow-main: #d4af37;
-      --yellow-deep: #b8962e;
-      --orange: #c99700;
+      /* メイン：黄色ベースの金色 */
+      --gold-main: #d6b24c;
+      /* サブ：ことぶき色（赤みの金） */
+      --gold-kotobuki: #c89b3c;
+      /* 補助：黄色・オレンジ */
+      --yellow: #f5cf5a;
+      --orange: #e39a2d;
+
       --text: #333;
       --gray: #fafafa;
     }
@@ -31,7 +36,7 @@
 
     /* ===== ヒーロー ===== */
     .hero {
-      background: linear-gradient(180deg,#fff 0%,#fff3c4 100%);
+      background: linear-gradient(180deg,#fff 0%,#fff6d6 100%);
       padding: 80px 0 100px;
     }
 
@@ -59,7 +64,7 @@
       transform: translateX(-50%);
       width: 110%;
       height: 14px;
-      background: var(--yellow-main);
+      background: var(--gold-main);
       z-index: -1;
       border-radius: 10px;
     }
@@ -81,8 +86,14 @@
       color: #000;
     }
 
-    .btn-main { background: var(--yellow-main); }
-    .btn-sub { background: #fff; border: 3px solid var(--yellow-main); }
+    .btn-main {
+      background: var(--gold-main);
+    }
+
+    .btn-sub {
+      background: #fff;
+      border: 3px solid var(--gold-kotobuki);
+    }
 
     .hero img {
       width: 100%;
@@ -113,12 +124,12 @@
       transform: translateX(-50%);
       width: 110%;
       height: 12px;
-      background: var(--yellow-deep);
+      background: var(--gold-kotobuki);
       z-index: -1;
       border-radius: 8px;
     }
 
-    /* 安心して使える理由専用：斜めマーカー */
+    /* 安心して使える理由：斜めマーカー */
     .marker-diagonal {
       position: relative;
       display: inline-block;
@@ -131,7 +142,11 @@
       bottom: 8px;
       width: 115%;
       height: 18px;
-      background: linear-gradient(120deg,var(--yellow-main),var(--yellow-deep));
+      background: linear-gradient(
+        120deg,
+        var(--gold-main),
+        var(--orange)
+      );
       transform: skewX(-18deg);
       z-index: -1;
       border-radius: 6px;
@@ -157,7 +172,7 @@
       padding: 34px;
       border-radius: 22px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-top: 8px solid var(--yellow-main);
+      border-top: 8px solid var(--gold-main);
     }
 
     .card h3 {
@@ -244,7 +259,10 @@
 <section class="hero">
   <div class="container hero-inner">
     <div>
-      <h1>あなたのスキルが買われ、あなたの必要なスキルが見つかる場所。</h1>
+      <h1>
+        あなたのスキルが買われ、<br>
+        あなたの必要なスキルが見つかる場所。
+      </h1>
       <p>スキルマッチングは、オンライン専門職に特化した安全・安心なマッチングプラットフォームです。</p>
       <div class="hero-buttons">
         <a href="#" class="btn-main">サービスを見る</a>
