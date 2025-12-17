@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>スキルマッチング｜あなたのスキルが買われ、あなたの必要なスキルが見つかる場所。</title>
+  <title>スキルマッチング｜あなたのスキルが買われ、必要なスキルが見つかる場所。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images/cat.png">
 
@@ -10,16 +10,16 @@
     :root {
       --yellow-main: #ffcc00;
       --yellow-deep: #f5b700;
-      --gold: #d4af37;
       --orange: #ff9f1c;
-      --text: #333;
-      --gray: #fafafa;
+      --text-main: #333;
+      --text-sub: #555;
+      --bg-gray: #fafafa;
     }
 
     body {
       margin: 0;
       font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
-      color: var(--text);
+      color: var(--text-main);
       background: #fff;
       line-height: 1.7;
     }
@@ -30,10 +30,17 @@
       padding: 0 24px;
     }
 
-    /* ===== ヒーロー ===== */
+    section {
+      padding: 100px 0;
+    }
+
+    section.gray {
+      background: var(--bg-gray);
+    }
+
+    /* ===== Hero ===== */
     .hero {
       background: linear-gradient(180deg,#fff 0%,#fff1b8 100%);
-      padding: 90px 0 110px;
     }
 
     .hero-inner {
@@ -44,10 +51,9 @@
     }
 
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 900;
       line-height: 1.3;
-      margin-bottom: 20px;
       position: relative;
       display: inline-block;
     }
@@ -62,13 +68,12 @@
       background: var(--yellow-main);
       z-index: -1;
       border-radius: 10px;
-      transform: rotate(-1deg);
     }
 
     .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 40px;
+      font-size: 1.2rem;
       color: #444;
+      margin: 30px 0 40px;
     }
 
     .hero-buttons a {
@@ -77,6 +82,8 @@
       border-radius: 40px;
       font-weight: bold;
       margin-right: 18px;
+      text-decoration: none;
+      color: #000;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
@@ -91,31 +98,23 @@
 
     .hero img {
       width: 100%;
-      max-width: 330px;
+      max-width: 260px;
       display: block;
       margin: auto;
       filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
     }
 
-    /* ===== 共通セクション ===== */
-    section {
-      padding: 100px 0;
-    }
-
-    section.gray {
-      background: var(--gray);
-    }
-
-    h2.section-title {
+    /* ===== Section title ===== */
+    .section-title {
+      text-align: center;
       font-size: 2.6rem;
       font-weight: 900;
-      text-align: center;
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
     }
 
-    h2.section-title::after {
+    .section-title::after {
       content: "";
       position: absolute;
       bottom: 6px;
@@ -125,18 +124,17 @@
       background: var(--yellow-deep);
       z-index: -1;
       border-radius: 8px;
-      transform: rotate(-0.8deg);
     }
 
-    p.section-lead {
+    .section-lead {
       text-align: center;
       font-size: 1.1rem;
-      color: #555;
+      color: var(--text-sub);
       max-width: 720px;
       margin: 30px auto 70px;
     }
 
-    /* ===== カード ===== */
+    /* ===== Cards ===== */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
@@ -152,25 +150,29 @@
     }
 
     .card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 15px;
       color: var(--orange);
+      margin-bottom: 12px;
     }
 
-    /* ===== フロー ===== */
-    .flow {
+    /* ===== Flow ===== */
+    .flow-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 20px;
-      text-align: center;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 60px;
+    }
+
+    .flow-column h3 {
+      margin-bottom: 20px;
+      color: var(--orange);
     }
 
     .flow-step {
       background: #fff;
-      padding: 26px;
+      padding: 22px;
       border-radius: 18px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
       font-weight: bold;
+      margin-bottom: 14px;
     }
 
     /* ===== FAQ ===== */
@@ -184,11 +186,19 @@
       padding: 22px 0;
     }
 
+    /* ===== Footer ===== */
     footer {
       background: #111;
       color: #ccc;
-      padding: 55px 20px;
+      padding: 50px 20px;
+      text-align: center;
       font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 6px;
     }
 
     @media (max-width: 768px) {
@@ -205,16 +215,16 @@
 
 <body>
 
-<!-- ヒーロー -->
 <section class="hero">
   <div class="container hero-inner">
     <div>
       <h1>
         あなたのスキルが買われ、<br>
-        あなたの必要なスキルが見つかる場所。
+        必要なスキルが見つかる場所。
       </h1>
       <p>
-        スキルマッチングは、オンライン専門職に特化した安全・安心なマッチングプラットフォームです。
+        オンライン専門職に特化した<br>
+        安全・安心なスキルマッチングプラットフォーム
       </p>
       <div class="hero-buttons">
         <a href="#" class="btn-main">サービスを見る</a>
@@ -227,7 +237,6 @@
   </div>
 </section>
 
-<!-- サービス特徴 -->
 <section>
   <div class="container">
     <h2 class="section-title">サービスの特徴</h2>
@@ -250,7 +259,6 @@
   </div>
 </section>
 
-<!-- 安心・信頼 -->
 <section class="gray">
   <div class="container">
     <h2 class="section-title">安心して使える理由</h2>
@@ -259,7 +267,7 @@
     <div class="card-grid">
       <div class="card">
         <h3>Stripe決済</h3>
-        <p>世界標準の決済基盤を採用。</p>
+        <p>世界標準の決済基盤。</p>
       </div>
       <div class="card">
         <h3>エスクロー方式</h3>
@@ -273,33 +281,31 @@
   </div>
 </section>
 
-<!-- 利用の流れ -->
 <section>
   <div class="container">
     <h2 class="section-title">ご利用の流れ</h2>
 
-    <h3>クライアント</h3>
-    <div class="flow">
-      <div class="flow-step">案件作成</div>
-      <div class="flow-step">マッチング</div>
-      <div class="flow-step">報酬をお預け</div>
-      <div class="flow-step">納品・検収</div>
-      <div class="flow-step">支払い完了</div>
-    </div>
+    <div class="flow-wrapper">
+      <div class="flow-column">
+        <h3>クライアント</h3>
+        <div class="flow-step">案件作成</div>
+        <div class="flow-step">マッチング</div>
+        <div class="flow-step">報酬をお預け</div>
+        <div class="flow-step">納品・検収</div>
+        <div class="flow-step">支払い完了</div>
+      </div>
 
-    <br><br>
-
-    <h3>ワーカー</h3>
-    <div class="flow">
-      <div class="flow-step">応募・依頼受領</div>
-      <div class="flow-step">契約成立</div>
-      <div class="flow-step">業務・納品</div>
-      <div class="flow-step">報酬受取</div>
+      <div class="flow-column">
+        <h3>ワーカー</h3>
+        <div class="flow-step">応募・依頼受領</div>
+        <div class="flow-step">契約成立</div>
+        <div class="flow-step">業務・納品</div>
+        <div class="flow-step">報酬受取</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="gray">
   <div class="container">
     <h2 class="section-title">よくある質問</h2>
@@ -307,20 +313,23 @@
     <div class="faq">
       <div class="faq-item">
         <h4>支払いはいつ確定しますか？</h4>
-        <p>検収完了後に確定します。</p>
+        <p>クライアントによる検収完了後に確定します。</p>
       </div>
       <div class="faq-item">
-        <h4>途中キャンセルはできますか？</h4>
-        <p>条件に応じて返金されます。</p>
+        <h4>途中キャンセルは可能ですか？</h4>
+        <p>条件に応じて返金処理が行われます。</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <p>© 2025 スキルマッチング</p>
-  </div>
+  <p>
+    <a href="#">利用規約</a>｜
+    <a href="#">プライバシーポリシー</a>｜
+    <a href="#">お問い合わせ</a>
+  </p>
+  <p>© 2025 スキルマッチング</p>
 </footer>
 
 </body>
