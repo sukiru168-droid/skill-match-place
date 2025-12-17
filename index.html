@@ -8,14 +8,16 @@
 
   <style>
     :root {
-      /* メイン：黄色ベースの金色 */
-      --gold-main: #d6b24c;
-      /* サブ：ことぶき色（赤みの金） */
-      --gold-kotobuki: #c89b3c;
-      /* 補助：黄色・オレンジ */
-      --yellow: #f5cf5a;
-      --orange: #e39a2d;
+      /* メイン：視覚的に強い金色（軽いグラデーション用） */
+      --gold-strong-1: #f2cf63;
+      --gold-strong-2: #d4a72c;
 
+      /* サブ：複数の黄色 */
+      --yellow-soft: #fff3b0;
+      --yellow-main: #f5d547;
+      --yellow-deep: #e0b800;
+
+      --orange: #e59a1f;
       --text: #333;
       --gray: #fafafa;
     }
@@ -36,7 +38,11 @@
 
     /* ===== ヒーロー ===== */
     .hero {
-      background: linear-gradient(180deg,#fff 0%,#fff6d6 100%);
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        var(--yellow-soft) 100%
+      );
       padding: 80px 0 100px;
     }
 
@@ -56,17 +62,23 @@
       display: inline-block;
     }
 
+    /* クレヨン風マーカー（ヒーロー） */
     .hero h1::after {
       content: "";
       position: absolute;
-      left: 50%;
+      left: -2%;
       bottom: 6px;
-      transform: translateX(-50%);
-      width: 110%;
-      height: 14px;
-      background: var(--gold-main);
+      width: 104%;
+      height: 18px;
+      background: linear-gradient(
+        90deg,
+        var(--gold-strong-1),
+        var(--gold-strong-2)
+      );
+      opacity: 0.85;
       z-index: -1;
-      border-radius: 10px;
+      border-radius: 12px 8px 10px 6px;
+      filter: blur(0.2px);
     }
 
     .hero p {
@@ -87,12 +99,16 @@
     }
 
     .btn-main {
-      background: var(--gold-main);
+      background: linear-gradient(
+        135deg,
+        var(--gold-strong-1),
+        var(--gold-strong-2)
+      );
     }
 
     .btn-sub {
       background: #fff;
-      border: 3px solid var(--gold-kotobuki);
+      border: 3px solid var(--yellow-deep);
     }
 
     .hero img {
@@ -116,40 +132,47 @@
       position: relative;
     }
 
+    /* クレヨン風マーカー（共通） */
     .section-title::after {
       content: "";
       position: absolute;
       bottom: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 110%;
-      height: 12px;
-      background: var(--gold-kotobuki);
+      left: -3%;
+      width: 106%;
+      height: 16px;
+      background: linear-gradient(
+        90deg,
+        var(--yellow-main),
+        var(--yellow-deep)
+      );
+      opacity: 0.85;
       z-index: -1;
-      border-radius: 8px;
+      border-radius: 10px 14px 8px 12px;
+      filter: blur(0.3px);
     }
 
-    /* 安心して使える理由：斜めマーカー */
-    .marker-diagonal {
+    /* 安心して使える理由：同じクレヨンマーカーを明示適用 */
+    .marker-crayon {
       position: relative;
       display: inline-block;
     }
 
-    .marker-diagonal::before {
+    .marker-crayon::after {
       content: "";
       position: absolute;
-      left: -14px;
-      bottom: 8px;
-      width: 115%;
+      bottom: 6px;
+      left: -3%;
+      width: 106%;
       height: 18px;
       background: linear-gradient(
-        120deg,
-        var(--gold-main),
+        90deg,
+        var(--gold-strong-1),
         var(--orange)
       );
-      transform: skewX(-18deg);
+      opacity: 0.85;
       z-index: -1;
-      border-radius: 6px;
+      border-radius: 14px 8px 12px 10px;
+      filter: blur(0.4px);
     }
 
     .section-lead {
@@ -172,7 +195,7 @@
       padding: 34px;
       border-radius: 22px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-top: 8px solid var(--gold-main);
+      border-top: 8px solid var(--gold-strong-2);
     }
 
     .card h3 {
@@ -289,7 +312,7 @@
 
 <section class="gray">
   <div class="container" style="text-align:center;">
-    <h2 class="section-title marker-diagonal">安心して使える理由</h2>
+    <h2 class="section-title marker-crayon">安心して使える理由</h2>
     <p class="section-lead">すべての取引は安全設計。</p>
     <div class="card-grid">
       <div class="card"><h3>Stripe決済</h3><p>世界標準の決済基盤を採用。</p></div>
