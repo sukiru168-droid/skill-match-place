@@ -8,16 +8,14 @@
 
   <style>
     :root {
-      /* メイン：視覚的に強い金色（軽いグラデーション用） */
-      --gold-strong-1: #f2cf63;
-      --gold-strong-2: #d4a72c;
+      /* ===== メイン：強い黄金色（軽いグラデーション） ===== */
+      --gold-main-1: #f7d86a;
+      --gold-main-2: #d4a017;
 
-      /* サブ：複数の黄色 */
-      --yellow-soft: #fff3b0;
-      --yellow-main: #f5d547;
-      --yellow-deep: #e0b800;
+      /* ===== サブ：黄色・金色 ===== */
+      --gold-sub-1: #ffef9a;
+      --gold-sub-2: #f2c94c;
 
-      --orange: #e59a1f;
       --text: #333;
       --gray: #fafafa;
     }
@@ -41,9 +39,10 @@
       background: linear-gradient(
         180deg,
         #ffffff 0%,
-        var(--yellow-soft) 100%
+        var(--gold-sub-1) 100%
       );
       padding: 80px 0 100px;
+      overflow: visible;
     }
 
     .hero-inner {
@@ -60,25 +59,27 @@
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
+      white-space: nowrap;   /* ← 強制1行 */
+      z-index: 2;
     }
 
-    /* クレヨン風マーカー（ヒーロー） */
+    /* クレヨン風・金色マーカー（ヒーロー） */
     .hero h1::after {
       content: "";
       position: absolute;
-      left: -2%;
+      left: -3%;
       bottom: 6px;
-      width: 104%;
+      width: 106%;
       height: 18px;
       background: linear-gradient(
         90deg,
-        var(--gold-strong-1),
-        var(--gold-strong-2)
+        var(--gold-main-1),
+        var(--gold-main-2)
       );
       opacity: 0.85;
       z-index: -1;
-      border-radius: 12px 8px 10px 6px;
-      filter: blur(0.2px);
+      border-radius: 14px 8px 12px 10px;
+      filter: blur(0.4px);
     }
 
     .hero p {
@@ -101,14 +102,14 @@
     .btn-main {
       background: linear-gradient(
         135deg,
-        var(--gold-strong-1),
-        var(--gold-strong-2)
+        var(--gold-main-1),
+        var(--gold-main-2)
       );
     }
 
     .btn-sub {
       background: #fff;
-      border: 3px solid var(--yellow-deep);
+      border: 3px solid var(--gold-main-2);
     }
 
     .hero img {
@@ -132,7 +133,7 @@
       position: relative;
     }
 
-    /* クレヨン風マーカー（共通） */
+    /* クレヨン風・金色マーカー（共通） */
     .section-title::after {
       content: "";
       position: absolute;
@@ -142,16 +143,16 @@
       height: 16px;
       background: linear-gradient(
         90deg,
-        var(--yellow-main),
-        var(--yellow-deep)
+        var(--gold-main-1),
+        var(--gold-main-2)
       );
       opacity: 0.85;
       z-index: -1;
-      border-radius: 10px 14px 8px 12px;
-      filter: blur(0.3px);
+      border-radius: 12px 14px 8px 10px;
+      filter: blur(0.4px);
     }
 
-    /* 安心して使える理由：同じクレヨンマーカーを明示適用 */
+    /* 安心して使える理由：明示的にマーカー */
     .marker-crayon {
       position: relative;
       display: inline-block;
@@ -166,13 +167,13 @@
       height: 18px;
       background: linear-gradient(
         90deg,
-        var(--gold-strong-1),
-        var(--orange)
+        var(--gold-main-1),
+        var(--gold-main-2)
       );
-      opacity: 0.85;
+      opacity: 0.9;
       z-index: -1;
       border-radius: 14px 8px 12px 10px;
-      filter: blur(0.4px);
+      filter: blur(0.5px);
     }
 
     .section-lead {
@@ -195,13 +196,13 @@
       padding: 34px;
       border-radius: 22px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-top: 8px solid var(--gold-strong-2);
+      border-top: 8px solid var(--gold-main-2);
     }
 
     .card h3 {
       font-size: 1.35rem;
       margin-bottom: 15px;
-      color: var(--orange);
+      color: var(--gold-main-2);
     }
 
     /* ===== 利用の流れ ===== */
@@ -230,7 +231,7 @@
     .flow-arrow {
       text-align: center;
       font-size: 1.6rem;
-      color: var(--orange);
+      color: var(--gold-main-2);
       margin: 8px 0 12px;
       font-weight: bold;
     }
@@ -272,7 +273,10 @@
         grid-template-columns: 1fr;
       }
 
-      .hero h1 { font-size: 2.2rem; }
+      .hero h1 {
+        font-size: 2.2rem;
+        white-space: nowrap; /* モバイルでも1行 */
+      }
     }
   </style>
 </head>
@@ -283,8 +287,7 @@
   <div class="container hero-inner">
     <div>
       <h1>
-        あなたのスキルが買われ、<br>
-        あなたの必要なスキルが見つかる場所。
+        あなたのスキルが買われ、あなたの必要なスキルが見つかる場所。
       </h1>
       <p>スキルマッチングは、オンライン専門職に特化した安全・安心なマッチングプラットフォームです。</p>
       <div class="hero-buttons">
@@ -327,7 +330,6 @@
     <h2 class="section-title">ご利用の流れ</h2>
 
     <div class="flow-wrapper">
-
       <div>
         <h3>クライアント</h3>
         <div class="flow-vertical">
@@ -355,7 +357,6 @@
           <div class="flow-step">報酬受取</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
