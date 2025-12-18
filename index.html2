@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スキルマッチング｜あなたのスキルが買われ、あなたに必要なスキルが見つかる場所。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スキルマッチングはオンライン専門職に特化した安全・安心のマッチングプラットフォーム。契約成立後はStripe決済で報酬を一時管理し、安全に取引可能。">
+  <link rel="icon" href="images/cat.png">
+
+  <!-- JSON-LD構造化データ（FAQ対応） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "支払いはいつ確定しますか？",
+        "acceptedAnswer": {"@type": "Answer","text": "検収完了後に確定します。"}
+      },
+      {
+        "@type": "Question",
+        "name": "途中キャンセルはできますか？",
+        "acceptedAnswer": {"@type": "Answer","text": "条件に応じて返金されます。"}
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --main-yellow: #ffeb00;
+      --sub-gold: #ffb000;
+      --text: #333;
+      --gray: #fafafa;
+      --shadow: rgba(0,0,0,0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    a:focus { outline: 3px solid var(--sub-gold); }
+
+    /* ===== ヒーロー ===== */
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, var(--main-yellow) 100%);
+      padding: 80px 0 100px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      position: relative;
+      display: block;
+      z-index: 1;
+      margin-bottom: 6px;
+    }
+
+    .hero h1 span::after {
+      content: "";
+      position: absolute;
+      left: -3%;
+      bottom: 6px;
+      width: 106%;
+      height: 18px;
+      background: var(--sub-gold);
+      opacity: 0.85;
+      z-index: -1;
+      border-radius: 14px 10px 12px 8px;
+      filter: blur(0.4px);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 36px;
+      color: #444;
+    }
+
+    .hero-buttons a {
+      display: inline-block;
+      padding: 15px 32px;
+      border-radius: 40px;
+      font-weight: bold;
+      margin-right: 16px;
+      box-shadow: 0 10px 25px var(--shadow);
+      text-align: center;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, var(--main-yellow), var(--sub-gold));
+      color: #000;
+    }
+
+    .btn-sub {
+      background: #fff;
+      border: 3px solid var(--sub-gold);
+      color: #000;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 210px;
+      display: block;
+      margin: auto;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+    }
+
+    /* ===== 共通セクション ===== */
+    section { padding: 100px 0; }
+    section.gray { background: var(--gray); }
+
+    .section-title {
+      display: inline-block;
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 900;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: -3%;
+      width: 106%;
+      height: 16px;
+      background: var(--sub-gold);
+      opacity: 0.85;
+      z-index: -1;
+      border-radius: 12px 14px 8px 10px;
+      filter: blur(0.4px);
+    }
+
+    .section-lead {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 720px;
+      margin: 30px auto 70px;
+    }
+
+    /* ===== カード ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 36px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 34px;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-top: 8px solid var(--sub-gold);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 50px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 15px;
+      color: var(--sub-gold);
+    }
+
+    /* ===== 利用の流れ ===== */
+    .flow-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .flow-vertical {
+      max-width: 420px;
+      margin: 0 auto 60px;
+    }
+
+    .flow-step {
+      background: #fff;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-step::before {
+      content: counter(step);
+      counter-increment: step;
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      background: var(--sub-gold);
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .flow-vertical { counter-reset: step; }
+
+    .flow-arrow {
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--sub-gold);
+      margin: 8px 0 12px;
+      font-weight: bold;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 22px 0;
+    }
+
+    .faq-item button {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .faq-item button:focus { outline: 3px solid var(--sub-gold); }
+    .faq-answer { padding-top: 8px; }
+
+    /* ===== フッター ===== */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 55px 20px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 2.2rem; }
+      .flow-wrapper { grid-template-columns: 1fr; }
+      .hero-buttons a { display: block; margin: 12px auto; width: 60%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <h1>
+        <span>あなたのスキルが買われ、</span>
+        <span>あなたに必要なスキルが見つかる場所。</span>
+      </h1>
+      <p>スキルマッチングは、オンライン専門職に特化した安全・安心なマッチングプラットフォームです。</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-main">サービスを見る</a>
+        <a href="#" class="btn-sub">無料で始める</a>
+      </div>
+    </div>
+    <div>
+      <img src="images/cat.png" alt="スキルマッチング マスコット猫" role="img">
+    </div>
+  </div>
+</section>
+
+<!-- ===== サービス特徴 ===== -->
+<section>
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">サービスの特徴</h2>
+    <p class="section-lead">発注者・ワーカー双方が安心して使える仕組み。</p>
+    <div class="card-grid">
+      <div class="card"><h3>オンライン専門職に特化</h3><p>リモート完結のスキルに最適。</p></div>
+      <div class="card"><h3>安全な決済管理</h3><p>検収完了後に支払いが確定。</p></div>
+      <div class="card"><h3>直接依頼も可能</h3><p>案件募集・個別依頼の両対応。</p></div>
+      <div class="card"><h3>アプリ内完結</h3><p>応募・契約・納品、報酬受取や支払を全てアプリ内で完結。</p></div>
+      <div class="card"><h3>自由な働き方</h3><p>案件単位で働けるので、副業やスキマ時間に最適。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 安全性 ===== -->
+<section class="gray">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">安心して使える理由</h2>
+    <p class="section-lead">すべての取引は安全設計。</p>
+    <div class="card-grid">
+      <div class="card"><h3>Stripe決済</h3><p>世界標準の決済基盤を採用。</p></div>
+      <div class="card"><h3>エスクロー方式</h3><p>報酬は一時預かり。</p></div>
+      <div class="card"><h3>トラブル防止</h3><p>金銭リスクを最小化。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ご利用の流れ ===== -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;">ご利用の流れ</h2>
+    <div class="flow-wrapper">
+      <div>
+        <h3 style="text-align:center;">クライアント</h3>
+        <div class="flow-vertical">
+          <div class="flow-step">案件作成</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">マッチング</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">報酬をお預け</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">納品・検収</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">支払い完了</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="text-align:center;">ワーカー</h3>
+        <div class="flow-vertical">
+          <div class="flow-step">応募・依頼受領</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">契約成立</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">業務・納品</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">報酬受取</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="gray">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;">よくある質問</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button aria-expanded="false">支払いはいつ確定しますか？</button>
+        <div class="faq-answer" hidden>検収完了後に確定します。</div>
+      </div>
+      <div class="faq-item">
+        <button aria-expanded="false">途中キャンセルはできますか？</button>
+        <div class="faq-answer" hidden>条件に応じて返金されます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer>
+  <p>© 2025 スキルマッチング</p>
+  <p>
+    <a href="#">利用規約</a>｜
+    <a href="#">プライバシーポリシー</a>｜
+    <a href="#">お問い合わせ</a>
+  </p>
+</footer>
+
+<!-- ===== FAQ開閉スクリプト ===== -->
+<script>
+document.querySelectorAll('.faq-item button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    btn.nextElementSibling.hidden = expanded;
+  });
+});
+</script>
+
+</body>
+</html>
