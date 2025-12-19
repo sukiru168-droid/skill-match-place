@@ -40,9 +40,6 @@
       --text: #333;
       --gray: #fafafa;
       --shadow: rgba(0,0,0,0.15);
-
-      /* ヒーロー用 紺色 */
-      --hero-navy: #0f1420;
     }
 
     body {
@@ -59,18 +56,23 @@
       padding: 0 24px;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    a { 
+      text-decoration: none; 
+      color: inherit; 
     }
 
-    a:focus {
-      outline: 3px solid var(--sub-gold);
+    a:focus { 
+      outline: 3px solid var(--sub-gold); 
     }
 
     /* ===== ヒーロー ===== */
     .hero {
-      background: var(--hero-navy);
+      background: linear-gradient(
+        135deg,
+        #0f1b2d 0%,
+        #132540 55%,
+        #0b1526 100%
+      );
       padding: 140px 0 120px;
     }
 
@@ -87,10 +89,10 @@
       line-height: 1.3;
       margin-bottom: 20px;
       max-width: 1100px;
-      color: #fff;
+      color: #ffffff;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.35);
     }
 
-    /* ヒーロータイトル（改行固定） */
     .hero h1 span {
       display: block;
       margin-bottom: 6px;
@@ -100,14 +102,14 @@
       white-space: nowrap;
     }
 
-    .hero h1 span::after {
-      content: none;
+    .hero h1 span::after { 
+      content: none; 
     }
 
     .hero p {
       font-size: 1.2rem;
       margin-bottom: 36px;
-      color: #e5e5e5;
+      color: #e6eaf0;
     }
 
     .hero-buttons a {
@@ -116,8 +118,14 @@
       border-radius: 40px;
       font-weight: bold;
       margin-right: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      box-shadow: 0 10px 25px var(--shadow);
       text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hero-buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.35);
     }
 
     .btn-main {
@@ -126,9 +134,14 @@
     }
 
     .btn-sub {
-      background: #fff;
+      background: transparent;
       border: 3px solid var(--sub-gold);
-      color: #000;
+      color: var(--sub-gold);
+    }
+
+    .hero-inner > div:last-child {
+      display: flex;
+      justify-content: center;
     }
 
     .hero img {
@@ -136,17 +149,13 @@
       max-width: 260px;
       display: block;
       margin: auto;
-      filter: drop-shadow(0 25px 40px rgba(0,0,0,0.35));
+      filter: drop-shadow(0 12px 25px rgba(0,0,0,0.6));
+      transform: translateX(10px);
     }
 
     /* ===== 共通セクション ===== */
-    section {
-      padding: 100px 0;
-    }
-
-    section.gray {
-      background: var(--gray);
-    }
+    section { padding: 100px 0; }
+    section.gray { background: var(--gray); }
 
     .section-title {
       display: inline-block;
@@ -246,6 +255,7 @@
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
       font-weight: bold;
       text-align: center;
+      position: relative;
     }
 
     .flow-arrow {
@@ -279,13 +289,8 @@
       color: #333;
     }
 
-    .faq-item button:focus {
-      outline: 3px solid var(--sub-gold);
-    }
-
-    .faq-answer {
-      padding-top: 8px;
-    }
+    .faq-item button:focus { outline: 3px solid var(--sub-gold); }
+    .faq-answer { padding-top: 8px; }
 
     /* ===== フッター ===== */
     footer {
@@ -302,195 +307,211 @@
       margin: 0 8px;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
 
     /* ===== レスポンシブ ===== */
     @media (max-width: 768px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero img {
-        max-width: 200px;
-      }
-
-      .flow-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-buttons a {
-        display: block;
-        margin: 12px auto;
-        width: 60%;
-      }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 2.2rem; }
+      .flow-wrapper { grid-template-columns: 1fr; }
+      .hero-buttons a { display: block; margin: 12px auto; width: 60%; }
+      .hero img { max-width: 200px; margin-top: 40px; transform: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== ヒーロー ===== -->
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <h1>
-        <span>あなたのスキルが買われ、</span>
-        <span>あなたに必要なスキルが見つかる場所。</span>
-      </h1>
-      <p>
-        スキルマッチングは、オンライン専門職に特化した安全・安心な
-        マッチングプラットフォームです。
+  <!-- ===== ヒーロー ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>
+          <span>あなたのスキルが買われ、</span>
+          <span>あなたに必要なスキルが見つかる場所。</span>
+        </h1>
+        <p>
+          オンライン専門職に特化。<br>
+          契約・納品・支払いまで、すべてアプリ内で完結。
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#register" class="btn-main">無料で会員登録</a>
+          <a href="#about" class="btn-sub">サービスを見る</a>
+        </div>
+      </div>
+
+      <div>
+        <img src="images/skillmatch-mark.png" alt="SkillMatch ロゴマーク" role="img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== サービス概要 ===== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">スキルマッチングとは</h2>
+      <p class="section-lead">
+        スキルマッチングは、オンラインで完結する専門スキルに特化した
+        マッチングプラットフォームです。<br>
+        「スキルを売りたい人」と「スキルを必要とする人」を、
+        安心・安全な取引設計でつなぎます。
       </p>
-      <div class="hero-buttons">
-        <a href="#" class="btn-main">サービスを見る</a>
-        <a href="#" class="btn-sub">無料で始める</a>
-      </div>
-    </div>
-    <div>
-      <img src="images/skillmatch-mark.png" alt="SkillMatch ロゴマーク" role="img">
-    </div>
-  </div>
-</section>
 
-<!-- ===== サービス特徴 ===== -->
-<section>
-  <div class="container" style="text-align:center;">
-    <h2 class="section-title">サービスの特徴</h2>
-    <p class="section-lead">発注者・ワーカー双方が安心して使える仕組み。</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>オンライン専門職に特化</h3>
-        <p>リモート完結のスキルに最適。</p>
-      </div>
-      <div class="card">
-        <h3>安全な決済管理</h3>
-        <p>検収完了後に支払いが確定。</p>
-      </div>
-      <div class="card">
-        <h3>直接依頼も可能</h3>
-        <p>案件募集・個別依頼の両対応。</p>
-      </div>
-      <div class="card">
-        <h3>アプリ内完結</h3>
-        <p>応募・契約・納品、報酬受取や支払を全てアプリ内で完結。</p>
-      </div>
-      <div class="card">
-        <h3>自由な働き方</h3>
-        <p>案件単位で働けるので、副業やスキマ時間に最適。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 安心して使える理由 ===== -->
-<section class="gray">
-  <div class="container" style="text-align:center;">
-    <h2 class="section-title">安心して使える理由</h2>
-    <p class="section-lead">すべての取引は安全設計。</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Stripe決済</h3>
-        <p>世界標準の決済基盤を採用。</p>
-      </div>
-      <div class="card">
-        <h3>エスクロー方式</h3>
-        <p>報酬は一時預かり。</p>
-      </div>
-      <div class="card">
-        <h3>トラブル防止</h3>
-        <p>金銭リスクを最小化。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ご利用の流れ ===== -->
-<section>
-  <div class="container">
-    <h2 class="section-title" style="text-align:center;">ご利用の流れ</h2>
-
-    <div class="flow-wrapper">
-      <div>
-        <h3 style="text-align:center;">クライアント</h3>
-        <div class="flow-vertical">
-          <div class="flow-step">案件作成</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">マッチング</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">報酬をお預け</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">納品・検収</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">支払い完了</div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>専門スキル特化</h3>
+          <p>
+            プログラミング、デザイン、動画編集、マーケティング、
+            研究支援など、オンラインで完結する専門スキルに特化。
+          </p>
         </div>
-      </div>
 
-      <div>
-        <h3 style="text-align:center;">ワーカー</h3>
-        <div class="flow-vertical">
-          <div class="flow-step">応募・依頼受領</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">契約成立</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">業務・納品</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-step">報酬受取</div>
+        <div class="card">
+          <h3>アプリ内完結</h3>
+          <p>
+            契約、チャット、納品、検収、支払いまで、
+            すべてアプリ内で完結します。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>副業にも最適</h3>
+          <p>
+            空いた時間を使ってスキルを収益化。
+            本業を続けながらでも無理なく利用できます。
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- ===== FAQ ===== -->
-<section class="gray">
-  <div class="container">
-    <h2 class="section-title" style="text-align:center;">よくある質問</h2>
+  </section>
 
-    <div class="faq">
-      <div class="faq-item">
-        <button aria-expanded="false">支払いはいつ確定しますか？</button>
-        <div class="faq-answer" hidden>
-          検収完了後に確定します。
+  <!-- ===== 安心して使える理由 ===== -->
+  <section class="gray">
+    <div class="container">
+      <h2 class="section-title">安心して使える理由</h2>
+      <p class="section-lead">
+        はじめての取引でも、不安なく利用できる仕組みを整えています。
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>報酬の仮押さえ</h3>
+          <p>
+            契約成立時にクライアントが報酬を仮押さえ。
+            納品後に検収が完了するまで安全に管理されます。
+          </p>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <button aria-expanded="false">途中キャンセルはできますか？</button>
-        <div class="faq-answer" hidden>
-          条件に応じて返金されます。
+        <div class="card">
+          <h3>検収後に支払い確定</h3>
+          <p>
+            納品物を確認し、問題がなければ支払いが確定。
+            未払いリスクを防ぎます。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>トラブル対応</h3>
+          <p>
+            万が一トラブルが発生した場合でも、
+            運営が状況を確認し適切に対応します。
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- ===== ご利用の流れ ===== -->
+  <section id="flow">
+    <div class="container">
+      <h2 class="section-title">ご利用の流れ</h2>
+      <p class="section-lead">
+        クライアント・ワーカーそれぞれの流れを、
+        わかりやすく比較できます。
+      </p>
 
-<!-- ===== フッター ===== -->
-<footer>
-  <p>© 2025 スキルマッチング</p>
-  <p>
-    <a href="#">利用規約</a>｜
-    <a href="#">プライバシーポリシー</a>｜
-    <a href="#">お問い合わせ</a>
-  </p>
-</footer>
+      <div class="flow-grid">
+        <!-- クライアント -->
+        <div class="flow-column">
+          <h3>クライアント</h3>
+          <ol>
+            <li>案件を作成・公開</li>
+            <li>応募者と条件を相談</li>
+            <li>契約・報酬を仮押さえ</li>
+            <li>納品物を確認・検収</li>
+            <li>支払い完了</li>
+          </ol>
+        </div>
 
-<!-- ===== FAQ開閉スクリプト ===== -->
-<script>
-document.querySelectorAll('.faq-item button').forEach(button => {
-  button.addEventListener('click', () => {
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!isExpanded));
-    button.nextElementSibling.hidden = isExpanded;
-  });
-});
-</script>
+        <!-- ワーカー -->
+        <div class="flow-column">
+          <h3>ワーカー</h3>
+          <ol>
+            <li>プロフィールを作成</li>
+            <li>案件に応募</li>
+            <li>契約成立</li>
+            <li>作業・納品</li>
+            <li>報酬を受け取る</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== よくある質問 ===== -->
+  <section class="gray">
+    <div class="container">
+      <h2 class="section-title">よくある質問</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>登録は無料ですか？</h3>
+          <p>
+            はい。会員登録は無料です。
+            案件の閲覧や相談も費用はかかりません。
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>手数料はかかりますか？</h3>
+          <p>
+            契約成立後、報酬の一部をシステム手数料として
+            いただいています。
+            詳細はサービス内でご確認ください。
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>トラブル時はどうなりますか？</h3>
+          <p>
+            運営が取引内容を確認し、
+            公平な立場で対応しますのでご安心ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container">
+      <h2>スキルを活かす、見つける。</h2>
+      <p>
+        まずは無料で、<br>
+        スキルマッチングを体験してみてください。
+      </p>
+      <a href="#register" class="btn-main">無料で始める</a>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <p class="footer-logo">SkillMatch</p>
+      <p class="footer-copy">
+        © SkillMatch All Rights Reserved.
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
