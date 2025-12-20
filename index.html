@@ -144,17 +144,19 @@
       justify-content: center;
     }
 
-    .hero img {
-      width: 100%;
-      max-width: 260px;
-      display: block;
-      margin: auto;
-
-  /* ▼ テスト用（あとで消してOK） */
-      background: white;
-      padding: 12px;
-      border-radius: 12px;
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 }
+
+    .hero-logo img {
+      height: 320px;   /* ← サイズは高さで指定 */
+      width: auto;
+      max-width: none;
+      display: block;
+}
+
     .hero-logo {
       background: white;
       padding: 24px 28px;
