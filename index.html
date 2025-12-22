@@ -67,13 +67,11 @@
 
     /* ===== ヒーロー ===== */
     .hero {
-      background: linear-gradient(
-      135deg,
-      #0d0f14 0%,
-      #141824 50%,
-      #1a1f2e 100%
+      background: radial-gradient(
+      circle at top,
+      #1a2f52 0%,
+      #132540 60%
   );
-}
 }
 
     .hero-inner {
@@ -139,34 +137,33 @@
       color: var(--sub-gold);
     }
 
-    .hero-inner > div:last-child {
-      display: flex;
-      justify-content: center;
-    }
-
+ 　　.hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }    
     .hero-logo {
       display: flex;
       justify-content: center;
       align-items: center;
-}
+    }
 
     .hero img {
       width: 100%;
-      max-width: 320px;
+      max-width: 260px;
       height: auto;
       display: block;
-      transform: scale(1.8);
-      filter: drop-shadow(0 0 25px rgba(255, 200, 80, 0.25));
-}
-
+      transform: none;
+    }
     .hero-logo {
      background: transparent;
      padding: 0;
      border-radius: 0;
      box-shadow: none;
      width: 360px;
-}
-    /* ===== 共通セクション ===== */
+    }
+   /* ===== 共通セクション ===== */
     section { padding: 100px 0; }
     section.gray { background: var(--gray); }
 
