@@ -67,11 +67,13 @@
 
     /* ===== ヒーロー ===== */
     .hero {
-      background: radial-gradient(
-      circle at top,
-      #1a2f52 0%,
-      #132540 60%
+      background: linear-gradient(
+      135deg,
+      #0d0f14 0%,
+      #141824 50%,
+      #1a1f2e 100%
   );
+}
 }
 
     .hero-inner {
@@ -154,18 +156,15 @@
       height: auto;
       display: block;
       transform: scale(1.8);
+      filter: drop-shadow(0 0 25px rgba(255, 200, 80, 0.25));
 }
 
     .hero-logo {
-      background: radial-gradient(
-      circle at top,
-      #1a2f52 0%,
-      #132540 60%
-  );
-      padding: 32px;
-      border-radius: 20px; /* ← ここ修正 */
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      width: 360px;
+     background: transparent;
+     padding: 0;
+     border-radius: 0;
+     box-shadow: none;
+     width: 360px;
 }
     /* ===== 共通セクション ===== */
     section { padding: 100px 0; }
