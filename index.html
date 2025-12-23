@@ -202,7 +202,9 @@
 }
 
    /* ===== 共通セクション ===== */
-    section { padding: 100px 0; }
+    section:not(.hero) {
+  padding: 100px 0;
+}
     section.gray { background: var(--gray); }
 
     .section-title {
