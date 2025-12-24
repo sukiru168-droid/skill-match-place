@@ -83,8 +83,12 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 48px;
   align-items: flex-start;
-  padding-right: 0;   /* ← ここに追加 */
+
+  max-width: 1100px;   /* ← 追加 */
+  margin: 0 auto;      /* ← 追加 */
+  padding: 0 24px;     /* ← 追加（containerと同じ） */
 }
+    
 .hero-inner > div:first-child {
   margin-top: 32px;
 }
