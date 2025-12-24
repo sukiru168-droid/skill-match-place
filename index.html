@@ -157,12 +157,12 @@
 /* ===== ロゴ ===== */
 .hero-logo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* ← ここが重要 */
   align-items: center;
   width: 420px;
-  margin-left: 88px; /* ← 明確に右寄せ */
+  margin-left: 0;            /* ← もう不要 */
+  padding-right: 24px;
 }
-
 .hero img {
   width: 100%;
   max-width: 420px;
