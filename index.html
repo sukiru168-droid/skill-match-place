@@ -254,13 +254,6 @@
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
 
-  .hero-inner {
-    grid-template-columns: 1fr; /* 1カラム */
-    text-align: center;
-    transform: none; /* PCのズラしを解除 */
-  }
-
-}
   .header-nav {
     display: none;
   }
@@ -271,6 +264,12 @@
 
   .hero {
     padding: 70px 0;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    transform: none;
   }
 
   .hero h1 {
