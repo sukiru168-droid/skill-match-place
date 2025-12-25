@@ -9,29 +9,37 @@
 
   <!-- JSON-LD構造化データ（FAQ対応） -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "支払いはいつ確定しますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "検収完了後に確定します。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "途中キャンセルはできますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "条件に応じて返金されます。"
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "登録は無料ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。会員登録は無料です。案件の閲覧や相談も費用はかかりません。"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "手数料はかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "契約成立後、報酬の一部をシステム手数料としていただいています。詳細はサービス内でご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "トラブル時はどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "運営が取引内容を確認し、公平な立場で対応しますのでご安心ください。"
+      }
+    }
+  ]
+}
+</script>
 
   <style>
     :root {
@@ -101,11 +109,9 @@
   margin-bottom: 12px;
   color: #ffffff;
   letter-spacing: 0.02em;
-  text-shadow:
-    0 6px 18px rgba(0,0,0,0.45),
-    0 0 1px rgba(255,255,255,0.7);
 
-  white-space: nowrap;   /* ← ★追加：強制1行 */
+  white-space: normal;
+  max-width: 14em;
 }
 
 /* 強調用（使う場合） */
@@ -214,11 +220,10 @@
     margin: 40px auto 0;
     width: 260px;
     justify-self: end;
-    transform: translateX(24px); /* ← 視覚重心を右へ */
   }
 
   .hero-inner > div:first-child {
-    transform: translateX(16px);
+
 }
   
   .hero img {
@@ -228,7 +233,7 @@
 
    /* ===== 共通セクション ===== */
     section:not(.hero) {
-  padding: 100px 0;
+  padding: 80px 0;
 }
     section.gray { background: var(--gray); }
 
@@ -382,18 +387,7 @@
       padding: 22px 0;
     }
 
-    .faq-item button {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      font-weight: bold;
-      font-size: 1.1rem;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .faq-item button:focus { outline: 3px solid var(--sub-gold); }
+   
     .faq-answer { padding-top: 8px; }
 
     /* ===== フッター ===== */
@@ -413,14 +407,7 @@
 
     footer a:hover { text-decoration: underline; }
 
-    /* ===== レスポンシブ ===== */
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero h1 { font-size: 2.2rem; }
-      .flow-wrapper { grid-template-columns: 1fr; }
-      .hero-buttons a { display: block; margin: 12px auto; width: 60%; }
-      .hero img { max-width: 200px; margin-top: 40px; transform: none; }
-    }
+
     .cta {
       background: linear-gradient(135deg, #132540, #0f1b2d);
       color: #fff;
