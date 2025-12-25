@@ -82,12 +82,14 @@
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 48px;
-  align-items: flex-start;
+  align-items: center;
 
   max-width: 1100px;   /* ← 追加 */
   margin: 0 auto;      /* ← 追加 */
   padding: 0 24px;     /* ← 追加（containerと同じ） */
   padding-top: 48px;   /* ← 全体を下げる */
+
+  padding-left: 64px; /* ← ★これだけ追加 */
 }
     
 /* ===== タイトル ===== */
@@ -160,9 +162,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 360px;      /* ← 420 → 360 */
+  width: 360px;
   margin-left: 0;
-  padding-right: 0;  /* ← 24px → 0 */
+  padding-right: 0;
 }
     
 .hero img {
@@ -432,8 +434,7 @@
     <div class="container hero-inner">
       <div>
         <h1>
-          スキルを活かす、<br>
-          見つける。
+          スキルを活かす、見つける。
         </h1>
         <p>
           オンライン専門職に特化。<br>
