@@ -58,6 +58,31 @@
       line-height: 1.7;
     }
 
+    <!-- ===== ヘッダー ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <!-- ロゴ -->
+    <div class="header-logo">
+      <img src="images/skillmatch-mark.png" alt="SkillMatch ロゴ">
+    </div>
+
+    <!-- ナビ -->
+    <nav class="header-nav">
+      <a href="#about">選ばれる理由</a>
+      <a href="#features">特徴</a>
+      <a href="#pricing">料金</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+
+    <!-- 右ボタン -->
+    <div class="header-actions">
+      <a href="#register" class="header-btn main">アカウント開設</a>
+      <a href="#download" class="header-btn sub">資料ダウンロード</a>
+      <a href="#login" class="header-login">ログイン</a>
+    </div>
+  </div>
+</header>
+
     .container {
       max-width: 1100px;
       margin: auto;
@@ -73,6 +98,70 @@
       outline: 3px solid var(--sub-gold); 
     }
 
+/* ===== ヘッダー ===== */
+.site-header {
+  background: #ffd84d; /* Timee風イエロー */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ロゴ */
+.header-logo img {
+  height: 34px;
+  width: auto;
+}
+
+/* ナビ */
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav a {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* 右側 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.header-btn.main {
+  background: #0b63ff;
+  color: #fff;
+}
+
+.header-btn.sub {
+  background: #fff;
+  color: #0b63ff;
+  border: 2px solid #0b63ff;
+}
+
+.header-login {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+    
 /* ===== ヒーロー ===== */
 .hero {
   background: radial-gradient(
@@ -80,7 +169,7 @@
     #1a2f52 0%,
     #132540 60%
   );
-  padding: 48px 0 56px; /* ← 高さを抑えてコンパクトに */
+  padding: 90px; /* ← 高さを抑えてコンパクトに */
 }
   .hero-inner > div:first-child {
    justify-self: center;   /* ← ブロック自体を中央 */
@@ -193,6 +282,14 @@
     padding: 70px 0;
   }
 
+  .header-nav {
+    display: none;
+  }
+
+  .header-actions .sub {
+    display: none;
+  }
+  
   .hero h1 br {
     display: inline;
   }
@@ -447,8 +544,8 @@
           見つける。
         </h1>
         <p>
-          オンライン専門職に特化。<br>
-          契約・納品・支払いまで、すべてアプリ内で完結。
+　        オンライン専門職に特化したマッチングアプリ。<br>
+  　      契約・納品・支払いまで、すべてアプリ内で完結。
         </p>
 
         <div class="hero-buttons">
