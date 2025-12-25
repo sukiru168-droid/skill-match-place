@@ -254,6 +254,13 @@
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
 
+  .hero-inner {
+    grid-template-columns: 1fr; /* 1カラム */
+    text-align: center;
+    transform: none; /* PCのズラしを解除 */
+  }
+
+}
   .header-nav {
     display: none;
   }
@@ -264,12 +271,6 @@
 
   .hero {
     padding: 70px 0;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    transform: none; /* ← PC用ずらしを解除 */
   }
 
   .hero h1 {
@@ -532,8 +533,8 @@
           見つける。
         </h1>
         <p>
-　        オンライン専門職に特化したマッチングアプリ。<br>
-  　      契約・納品・支払いまで、すべてアプリ内で完結。
+         オンライン専門職に特化したマッチングアプリ。<br>
+         契約・納品・支払いまで、すべてアプリ内で完結。
         </p>
 
         <div class="hero-buttons">
