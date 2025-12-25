@@ -109,11 +109,11 @@
   margin-bottom: 12px;
   color: #ffffff;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+}
 
-  white-space: nowrap;   /* ← PCは強制1行 */
-
- .hero h1 br {
-  display: none;   /* PCでは改行を消す */
+.hero h1 br {
+  display: none;
 }
   
 
@@ -191,17 +191,18 @@
 @media (max-width: 768px) {
   .hero {
     padding: 70px 0;
-  .hero h1 br {
-  display: inline;   /* スマホでは2行に戻す */
-}
   }
+
+  .hero h1 br {
+    display: inline;
+  }
+}
 
   .hero-inner {
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-    display: inline; /* スマホは2行 */
-  }
-
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
   .hero-inner > div:first-child {
   justify-self: center; /* ← 情報ブロック自体を中央寄せ */
 }
