@@ -111,9 +111,11 @@
   letter-spacing: 0.02em;
 
   white-space: nowrap;   /* ← PCは強制1行 */
-  max-width: none;       /* ← 行制限を解除 */
-  display: none; /* PCでは1行 */
+
+ .hero h1 br {
+  display: none;   /* PCでは改行を消す */
 }
+  
 
 /* 強調用（使う場合） */
 .hero h1 .accent {
@@ -189,6 +191,9 @@
 @media (max-width: 768px) {
   .hero {
     padding: 70px 0;
+  .hero h1 br {
+  display: inline;   /* スマホでは2行に戻す */
+}
   }
 
   .hero-inner {
