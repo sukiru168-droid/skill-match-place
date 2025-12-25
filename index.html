@@ -182,12 +182,17 @@
   }
 
   .hero-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
   }
 
+  .hero-inner > div:first-child {
+  justify-self: center; /* ← 情報ブロック自体を中央寄せ */
+}
+  
   .hero h1 {
     font-size: 2.4rem;
+    white-space: nowrap;   /* ← 強制一行 */
   }
 
   .hero p {
@@ -205,8 +210,14 @@
   .hero-logo {
     margin: 40px auto 0;
     width: 260px;
+    justify-self: end;
+    transform: translateX(24px); /* ← 視覚重心を右へ */
   }
 
+  .hero-inner > div:first-child {
+    transform: translateX(16px);
+}
+  
   .hero img {
     max-width: 260px;
   }
