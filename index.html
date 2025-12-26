@@ -349,13 +349,14 @@
     }
 
     .section-lead {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #555;
-      max-width: 720px;
-      margin: 30px auto 70px;
-    }
-
+  font-size: 1.15rem;      /* 少し小さめで収める */
+  line-height: 1.6;        /* 行間調整 */
+  max-width: 780px;         /* 横幅を制限 */
+  margin: 30px auto 70px;
+  text-align: center;       /* 中央揃えにする場合 */
+  white-space: normal;      /* 折り返しを有効にする */
+}
+    
     /* ===== カード ===== */
     .card-grid {
       display: grid;
@@ -570,12 +571,12 @@
 
   <!-- ===== サービス概要 ===== -->
   <section id="about">
-    <div class="container">
-      <h2 class="section-title">スキルマッチングとは</h2>
-      <p class="section-lead">
-        スキルマッチングは、オンラインで完結する専門スキルに特化したマッチングプラットフォームです。<br>
-        「スキルを売りたい人」と「スキルを必要とする人」を、安心・安全な取引設計でつなぎます。
-      </p>
+  <div class="container">
+    <h2 class="section-title">スキルマッチングとは</h2>
+    <p class="section-lead">
+      スキルマッチングは、オンラインで完結する専門スキルに特化したマッチングプラットフォームです。<br>
+      「スキルを売りたい人」と「スキルを必要とする人」を、安心・安全な取引設計でつなぎます。
+    </p>
 
       <div class="card-grid">
         <div class="card">
