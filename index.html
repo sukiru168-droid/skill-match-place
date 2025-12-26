@@ -75,14 +75,11 @@
 
 /* ===== ヘッダー ===== */
 .site-header {
-  background: radial-gradient(
-    circle at top,
-    #1a2f52 0%,
-    #132540 60%
-  );
+  background: #132540; /* ヒーローと同じ濃紺 */
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 2px solid rgba(255,255,255,0.15); /* 薄い白でライン */
 }
 
 .header-inner {
@@ -96,8 +93,8 @@
 
 /* ロゴ */
 .header-logo img {
-  height: 34px;
-  width: auto;
+  height: 50px; /* 例：ヘッダー内に収まる最大サイズ */
+  width: auto;  /* 縦横比を維持 */
 }
 
 /* ナビ */
