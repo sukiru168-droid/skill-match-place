@@ -85,16 +85,23 @@
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
+  height: 60px;
   justify-content: space-between;
 }
 
 /* ロゴ */
+.header-logo {
+  display: flex;
+  align-items: center; /* ヘッダー中央に配置 */
+}
+
 .header-logo img {
-  height: 100px; /* 例：ヘッダー内に収まる最大サイズ */
-  width: auto;  /* 縦横比を維持 */
+  height: 60px;
+  transform: scale(1.2);  /* 20%大きく見せる */
+  transform-origin: left center; /* 左中央を基準に拡大 */
 }
 
 /* ナビ */
