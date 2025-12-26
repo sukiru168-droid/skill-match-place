@@ -95,14 +95,14 @@
 /* ロゴ */
 .header-logo {
   display: flex;
-  align-items: center; /* ヘッダー中央に配置 */
+  align-items: center; /* 縦中央に配置 */
+  height: 60px;        /* ヘッダーの高さに合わせる */
 }
-
 .header-logo img {
-  height: 60px;
-  transform: scale(1.2);  /* 20%大きく見せる */
-  transform-origin: left center; /* 左中央を基準に拡大 */
-  max-height: 90%; /* 少し大きく見せる */
+  height: 100%;        /* ヘッダーの高さいっぱいに */
+  width: auto;         /* 縦横比を維持 */
+  object-fit: contain;  /* はみ出さず最大化 */
+  display: block;
 }
 
 /* ナビ */
