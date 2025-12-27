@@ -162,17 +162,15 @@
 }
 
  .hero-inner {
-   display: grid;
-   grid-template-columns: 0.9fr 1.1fr;
-   gap: 48px;
-   align-items: center;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
 
-   max-width: 1100px;
-   margin: 0 auto;
-   padding: 24px 24px 0;
-}
-
-   transform: translateX(40px); /* ← ★これが一番効く */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  transform: translateX(40px);
 }
 
 /* ヒーロー上部の見出し */
@@ -520,6 +518,15 @@
       margin-bottom: 30px;
       color: #e6eaf0;
 }
+    .html {
+  scroll-behavior: smooth;
+}
+
+    .section {
+  scroll-margin-top: 70px; /* ヘッダー高さ(60px) + 余白 */
+}
+📌 な
+    
   </style>
 </head>
 <body>
@@ -606,7 +613,7 @@
   </section>
 
   <!-- ===== 安心して使える理由 ===== -->
-  <section class="gray">
+  <section id="features" class="gray">
     <div class="container">
       <h2 class="section-title">安心して使える理由</h2>
       <p class="section-lead">
@@ -678,7 +685,7 @@
   </section>
 
   <!-- ===== よくある質問 ===== -->
-  <section class="gray">
+  <section id="features" class="gray">
     <div class="container">
       <h2 class="section-title">よくある質問</h2>
 
