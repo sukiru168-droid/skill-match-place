@@ -336,15 +336,15 @@
 
 /* ===== βキャンペーン ===== */
 .beta-campaign {
-  background: rgba(255,255,255,0.15); /* ヒーローと馴染む透明感 */
-  padding: 24px 0; /* 左右は inner で調整 */
+  background: rgba(255,255,255,0.15); /* ヒーロー背景に馴染む透明感 */
+  padding: 24px 0; /* 左右は内側で調整 */
   text-align: center;
+  width: 100%;       /* 背景を横いっぱいに広げる */
   margin: 20px auto 0;
-  width: 100%;
 }
 
 .beta-inner {
-  max-width: 800px;  /* 背景は横一杯だけどテキストはここで制限 */
+  max-width: 800px;  /* テキストは幅制限して読みやすく */
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -362,7 +362,7 @@
 
 .beta-note {
   font-size: 0.85rem;
-  color: #f1f5fb; /* 薄い白で読みやすく */
+  color: #f1f5fb; /* 薄い白で読みやすい */
   line-height: 1.5;
 }
 
@@ -370,13 +370,12 @@
   font-weight: 700;
 }
 
-/* スマホ調整 */
+/* スマホ対応 */
 @media (max-width: 768px) {
   .beta-inner {
-    max-width: 90%;
+    max-width: 90%; /* 画面幅に合わせる */
   }
 }
-    
    /* ===== 共通セクション ===== */
     section:not(.hero) {
   padding: 80px 0;
