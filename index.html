@@ -334,42 +334,48 @@
   }
 }
 
-  /* ===== βキャンペーン ===== */
+/* ===== βキャンペーン ===== */
 .beta-campaign {
-  background: rgba(255,255,255,0.1); /* ほぼ透明 */
-  border-radius: 16px;
-  padding: 24px 24px;
+  background: rgba(255,255,255,0.15); /* ヒーローと馴染む透明感 */
+  padding: 24px 0; /* 左右は inner で調整 */
   text-align: center;
-  max-width: 800px;
   margin: 20px auto 0;
+  width: 100%;
+}
+
+.beta-inner {
+  max-width: 800px;  /* 背景は横一杯だけどテキストはここで制限 */
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .beta-main {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
+  color: #fff; /* ヒーロー背景内で読みやすい白 */
 }
 
 .beta-main strong {
-  color: #e63946; /* 赤系で強調 */
+  color: #ffd84d; /* ゴールド強調 */
 }
 
 .beta-note {
   font-size: 0.85rem;
-  color: #666;
+  color: #f1f5fb; /* 薄い白で読みやすく */
   line-height: 1.5;
 }
 
 .highlight {
   font-weight: 700;
 }
-    
+
+/* スマホ調整 */
 @media (max-width: 768px) {
-  .beta-campaign {
+  .beta-inner {
     max-width: 90%;
   }
 }
-    
     
    /* ===== 共通セクション ===== */
     section:not(.hero) {
@@ -617,21 +623,19 @@
 
   <!-- β特典情報 -->
 <div class="beta-campaign">
-     <p class="beta-main">
-      初回契約日から <strong>3ヶ月間 手数料0%</strong>
-    </p>
-     <p class="beta-note">
+  <div class="beta-inner">
+    <p class="beta-main">初回契約日から <strong>3ヶ月間 手数料0%</strong></p>
+    <p class="beta-note">
       ※ 本特典は <span class="highlight">期間限定</span> での提供です。<br>
-      ※ 終了時期は非公開で、予告なく変更される場合があります。
+      ※ 終了時期は未公開で、予告なく変更される場合があります。
     </p>
+  </div>
 </div>
-      </div>
-
-      <div class="hero-logo">
+        
+<div class="hero-logo">
         <img src="images/skillmatch-mark.png" alt="SkillMatch ロゴ">
       </div>
-
-    </div>
+　　 </div>
   </section>
 
   <!-- ===== サービス概要 ===== -->
