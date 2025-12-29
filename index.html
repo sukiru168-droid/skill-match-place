@@ -338,9 +338,9 @@
 .beta-campaign {
   background: rgba(255,255,255,0.1); /* ほぼ透明 */
   border-radius: 16px;
-  padding: 24px 20px;
+  padding: 24px 24px;
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px auto 0;
 }
 
@@ -363,7 +363,13 @@
 .highlight {
   font-weight: 700;
 }
-
+    
+@media (max-width: 768px) {
+  .beta-campaign {
+    max-width: 90%;
+  }
+}
+    
     
    /* ===== 共通セクション ===== */
     section:not(.hero) {
