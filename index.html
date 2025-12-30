@@ -373,15 +373,21 @@
     font-size: 1.1rem;
   }
 
-  .beta-note {
-  font-size: 0.75rem;        /* ← さらに少し小さく */
-  line-height: 1.5;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  word-break: break-word;    /* ← 枠内で確実に収める */
-  white-space: normal;
- }
+   .beta-note {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* 「非公開で、」の後で強制改行 */
+  .beta-note::after {
+    content: "";
+    display: block;
+  }
 }
   /* ===== βキャンペーン ===== */
 .beta-campaign {
