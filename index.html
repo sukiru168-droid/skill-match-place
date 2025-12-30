@@ -285,6 +285,7 @@
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
 
+  /* ===== ヘッダー ===== */
   .header-nav {
     display: none;
   }
@@ -293,24 +294,35 @@
     display: none;
   }
 
+  /* ===== ヒーロー ===== */
   .hero {
     padding: 70px 0;
+  }
+
+  /* ヒーロー内 container の左右余白をスマホ用に最適化 */
+  .hero .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   /* hero 全体を安全な中央寄せに戻す */
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    transform: none;      /* ← PC用 transform を無効化 */
+    transform: none;      /* PC用 transform を無効化 */
+    padding-left: 0;
+    padding-right: 0;
+    justify-items: center;
   }
 
-   .hero-inner > div:first-child {
-    margin-top: 0;        /* ← -20px を解除 */
-    margin-left: 0;       /* ← -60px を解除 */
+  /* 左カラムのズレ解除 */
+  .hero-inner > div:first-child {
+    margin-top: 0;        /* -20px を解除 */
+    margin-left: 0;       /* -60px を解除 */
     text-align: center;
     justify-self: center;
   }
-  
+
   .hero h1 {
     font-size: 2.1rem;
     white-space: normal;
@@ -334,17 +346,19 @@
 
   .hero-logo {
     margin: 40px auto 0;
-    width: 260px;
+    width: auto;
+    max-width: 260px;
   }
 
   .hero img {
     max-width: 260px;
   }
-  
+
   /* ===== βキャンペーン（スマホ専用 上書き） ===== */
   .beta-campaign {
     padding: 18px 16px;
     text-align: center;
+    max-width: 100%;
   }
 
   .beta-main {
@@ -357,7 +371,6 @@
     white-space: normal;
   }
 }
-
   /* ===== βキャンペーン ===== */
 .beta-campaign {
   background: rgba(255,255,255,0.1);
