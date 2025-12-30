@@ -362,8 +362,9 @@
   line-height: 1.35;
   margin: 0;
 
-  padding-left: 1.2em;   /* ← 本文の開始位置 */
-  text-indent: -1.2em;   /* ← ※ だけ左に出す */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .highlight {
