@@ -299,26 +299,23 @@
     padding: 70px 0;
   }
 
-  /* ヒーロー内 container の左右余白をスマホ用に最適化 */
-  .hero .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
   /* hero 全体を安全な中央寄せに戻す */
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    transform: none;      /* PC用 transform を無効化 */
-    padding-left: 0;
-    padding-right: 0;
-    justify-items: center;
+    transform: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* 左カラムのズレ解除 */
   .hero-inner > div:first-child {
-    margin-top: 0;        /* -20px を解除 */
-    margin-left: 0;       /* -60px を解除 */
+    margin-top: 0;
+    margin-left: 0;
     text-align: center;
     justify-self: center;
   }
@@ -351,14 +348,21 @@
   }
 
   .hero img {
-    max-width: 260px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ===== βキャンペーン（スマホ専用 上書き） ===== */
   .beta-campaign {
+    margin-left: auto;
+    margin-right: auto;
     padding: 18px 16px;
-    text-align: center;
     max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .beta-main {
@@ -368,6 +372,8 @@
   .beta-note {
     font-size: 0.8rem;
     line-height: 1.4;
+    margin-left: auto;
+    margin-right: auto;
     white-space: normal;
   }
 }
