@@ -297,12 +297,20 @@
     padding: 70px 0;
   }
 
+  /* hero 全体を安全な中央寄せに戻す */
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    transform: none;
+    transform: none;      /* ← PC用 transform を無効化 */
   }
 
+   .hero-inner > div:first-child {
+    margin-top: 0;        /* ← -20px を解除 */
+    margin-left: 0;       /* ← -60px を解除 */
+    text-align: center;
+    justify-self: center;
+  }
+  
   .hero h1 {
     font-size: 2.4rem;
     white-space: normal;
@@ -332,6 +340,22 @@
   .hero img {
     max-width: 260px;
   }
+  
+  /* ===== βキャンペーン（スマホ専用 上書き） ===== */
+  .beta-campaign {
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .beta-main {
+    font-size: 1.1rem;
+  }
+
+  .beta-note {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    white-space: normal;
+  }
 }
 
   /* ===== βキャンペーン ===== */
@@ -339,7 +363,7 @@
   background: rgba(255,255,255,0.1);
   border-radius: 16px;
   padding: 24px 20px;
-  text-align: left;      /* ← center → left に変更 */
+  text-align: center;   /* ← center → left に変更 */
   max-width: 600px;
   margin: 20px auto 0;
   margin-top: 6px;
@@ -362,14 +386,13 @@
   line-height: 1.35;
   margin: 0;
 
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .highlight {
   font-weight: 700;
 }
 
-    
    /* ===== 共通セクション ===== */
     section:not(.hero) {
   padding: 80px 0;
