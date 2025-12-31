@@ -282,7 +282,7 @@
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.4));
 }
 
-/* ===== レスポンシブ ===== */
+/* ===== スマホ（768px以下） ===== */
 @media (max-width: 768px) {
 
   /* ===== ヘッダー ===== */
@@ -296,34 +296,38 @@
 
   /* ===== ヒーロー ===== */
   .hero {
-    padding: 70px 0;
+    padding: 64px 0 72px;
   }
 
-  /* hero 全体を安全な中央寄せに戻す */
   .hero-inner {
-  display: flex;              /* ← grid を完全にやめる */
-  flex-direction: column;     /* ← 縦並び */
-  align-items: center;        /* ← 中央寄せ */
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-  transform: none;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-  max-width: 100%;
-  box-sizing: border-box;
- }
-  /* 左カラムのズレ解除 */
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    transform: none;      /* PC用ズレ解除 */
+  }
+
+  /* 左カラム（テキスト） */
   .hero-inner > div:first-child {
-  order: 1;
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-}
+    order: 1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
 
   .hero h1 {
     font-size: 2.1rem;
+    line-height: 1.25;
     white-space: normal;
   }
 
@@ -332,54 +336,58 @@
   }
 
   .hero p {
-  font-size: 0.95rem;      /* ← 少し小さく */
-  line-height: 1.4;
-  margin-left: auto;
-  margin-right: auto;
-  white-space: nowrap;     /* ← 1行に固定 */
-}
-
-  .hero-buttons a {
-    display: block;
-    margin: 14px auto;
-    width: 70%;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 16px auto 24px;
+    max-width: 90%;
+    white-space: normal;   /* ← nowrap 完全撤廃 */
   }
 
- .hero-logo {
-  order: 2;           /* ← 必ずテキストの下に */
-  margin-top: 32px;
-  width: 100%;
-  max-width: 260px;
- }
+  /* ===== ボタン ===== */
+  .hero-buttons a {
+    display: block;
+    width: 80%;
+    margin: 12px auto;
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+
+  /* ===== ロゴ ===== */
+  .hero-logo {
+    order: 2;
+    margin-top: 28px;
+    width: 100%;
+    max-width: 240px;
+  }
+
   .hero img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 
-  /* ===== βキャンペーン（スマホ専用 上書き） ===== */
+  /* ===== βキャンペーン ===== */
   .beta-campaign {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto 0;
     padding: 18px 16px;
     max-width: 100%;
-    box-sizing: border-box;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .beta-main {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
 
-   .beta-note {
+  .beta-note {
     font-size: 0.75rem;
     line-height: 1.5;
     white-space: normal;
   }
 
-  /* スマホだけ改行させる */
+  /* スマホのみ改行 */
   .sp-break {
     display: block;
   }
