@@ -402,15 +402,16 @@
     display: block;
   }
 
-  /* ===== ヒーロー外 見出し ===== */
+ /* ===== ヒーロー外 見出し ===== */
   .section-title {
-    font-size: 1.8rem;
-    line-height: 1.25;
+    font-size: 0.95rem;   /* ← 約半分 */
+    line-height: 1.4;
+    font-weight: 700;     /* 小さくする分、太さで存在感を残す */
   }
 
   .section-title::after {
-    height: 0.6em;
-    opacity: 0.7;
+    height: 0.4em;        /* マーカーも控えめに */
+    opacity: 0.6;
   }
 }
   /* ===== βキャンペーン ===== */
