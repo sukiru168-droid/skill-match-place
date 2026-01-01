@@ -404,21 +404,22 @@
 
 /* ===== ヒーロー外 見出し（スマホ） ===== */
 .section-title {
-  font-size: 1.1rem;
-  line-height: 1.45;
-  font-weight: 700;
+  font-size: 1.4rem;      /* ← しっかり大きく */
+  line-height: 1.35;      /* 太字でも詰まりすぎない */
+  font-weight: 900;       /* ← 明確に太く */
+  letter-spacing: -0.015em;
 }
 
 .section-title::after {
-  height: 0.45em;
-  opacity: 0.65;
+  height: 0.55em;         /* マーカーも存在感アップ */
+  opacity: 0.75;
 }
 
 /* h2専用（確実に上書きしたい場合） */
 h2.section-title {
-  font-size: 1.1rem !important;
-  line-height: 1.45;
-  font-weight: 700;
+  font-size: 1.3rem !important;
+  line-height: 1.35;
+  font-weight: 800;
 }
 
 h2.section-title::after {
