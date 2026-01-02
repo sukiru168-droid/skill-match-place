@@ -284,6 +284,7 @@
 
 /* ===== タブレット（769px〜1024px） ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
+
   .hero h1 {
     font-size: 2.6rem;
     line-height: 1.22;
@@ -293,6 +294,7 @@
     font-size: 2.2rem;
   }
 }
+
 
 /* ===== スマホ（768px以下） ===== */
 @media (max-width: 768px) {
@@ -346,26 +348,18 @@
     display: inline;
   }
 
-  .hero p {
-    font-size: 0.95rem;
+  /* ===== ヒーロー説明文（必ず2行） ===== */
+  .hero-description {
+    font-size: 1rem;
     line-height: 1.6;
-    margin: 16px auto 24px;
-    max-width: 90%;
+    max-width: 95%;
+    margin: 16px auto 0;
     white-space: normal;
   }
 
-   .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-width: 90%;        /* ← 横幅を広げて4行化を防ぐ */
-    margin: 12px auto 0;
-    white-space: normal;  /* ← 強制改行を解除 */
-    word-break: normal;
-  }
-
-  /* 強制改行が入っていた場合の保険 */
-  .hero-description::after {
-    content: none;
+  /* スマホでは強制改行を無効化 */
+  .hero-description br {
+    display: none;
   }
 
   /* ===== ボタン ===== */
@@ -416,52 +410,50 @@
     display: block;
   }
 
-  
-  /* ===== ヒーロー外 見出し（スマホ・最強） ===== */
-.section-title {
-  font-size: 1.6rem;
-  line-height: 1.2;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-
-.section-title::after {
-  height: 0.75em;
-  opacity: 0.9;
-}
-
-/* h2専用（完全一致で上書き） */
-h2.section-title {
-  font-size: 1.6rem !important;
-  line-height: 1.2;
-  font-weight: 900;
-}
-
-h2.section-title::after {
-  height: 0.75em;
-  opacity: 0.9;
-}
-
-  .flow-compare {
-    grid-template-columns: 1fr; /* ← 縦並びに変更 */
-    gap: 32px;
-  }
-
-  .flow {
-    text-align: left;
-  }
-
-  .flow h3 {
-    font-size: 1.1rem;
+  /* ===== セクション見出し（スマホ最適） ===== */
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
     font-weight: 900;
-    margin-bottom: 8px;
+    letter-spacing: -0.02em;
   }
 
-  .flow p {
-    font-size: 0.9rem;
-    line-height: 1.6;
+  .section-title::after {
+    height: 0.75em;
+    opacity: 0.9;
   }
+
+  h2.section-title {
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+
+  h2.section-title::after {
+    height: 0.75em;
+    opacity: 0.9;
+  }
+
+  /* ===== ご利用の流れ：スマホのみ縦比較 ===== */
+  .flow-grid {
+    grid-template-columns: 1fr;   /* 縦並び */
+    gap: 40px;
+  }
+
+  /* クライアント → ワーカーの比較を明示 */
+  .flow-column:first-child::after {
+    content: "クライアント ⇅ ワーカー";
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: var(--sub-gold);
+    margin: 28px 0;
+  }
+
 }
+
   /* ===== βキャンペーン ===== */
 .beta-campaign {
   background: rgba(255,255,255,0.1);
