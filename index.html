@@ -284,6 +284,7 @@
 
 /* ===== タブレット（769px〜1024px） ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
+
   .hero h1 {
     font-size: 2.6rem;
     line-height: 1.22;
@@ -346,25 +347,13 @@
     display: inline;
   }
 
+  /* ===== ヒーロー説明文 ===== */
   .hero p {
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 16px auto 24px;
-    max-width: 90%;
+    max-width: 100%;
     white-space: normal;
-  }
-
-    .hero-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 95%;      /* ← 横幅を広げる */
-    margin: 16px auto 0;
-    white-space: normal;
-  }
-
-  /* スマホでは強制改行を無効化 */
-  .hero-description br {
-    display: none;
   }
 
   /* ===== ボタン ===== */
@@ -415,35 +404,15 @@
     display: block;
   }
 
-  
-  /* ===== ヒーロー外 見出し（スマホ・最強） ===== */
-.section-title {
-  font-size: 1.6rem;
-  line-height: 1.2;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-
-.section-title::after {
-  height: 0.75em;
-  opacity: 0.9;
-}
-
-/* h2専用（完全一致で上書き） */
-h2.section-title {
-  font-size: 1.6rem !important;
-  line-height: 1.2;
-  font-weight: 900;
-}
-
-h2.section-title::after {
-  height: 0.75em;
-  opacity: 0.9;
-}
-
+  /* ===== クライアント／ワーカー（スマホ縦並び） ===== */
   .flow-compare {
-    grid-template-columns: 1fr; /* ← 縦並びに変更 */
+    grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .flow-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .flow {
@@ -461,12 +430,7 @@ h2.section-title::after {
     line-height: 1.6;
   }
 
-  .flow-grid {
-    grid-template-columns: 1fr;   /* ← 縦並び */
-    gap: 40px;
-  }
-
-  /* 区切り感を出す */
+  /* ===== 区切り表示 ===== */
   .flow-column:first-child::after {
     content: "⇅";
     display: block;
@@ -476,7 +440,31 @@ h2.section-title::after {
     color: var(--sub-gold);
     margin: 24px 0;
   }
-}　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+
+  /* ===== ヒーロー外 見出し（スマホ最適） ===== */
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  .section-title::after {
+    height: 0.75em;
+    opacity: 0.9;
+  }
+
+  h2.section-title {
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+
+  h2.section-title::after {
+    height: 0.75em;
+    opacity: 0.9;
+  }
+}
   /* ===== βキャンペーン ===== */
 .beta-campaign {
   background: rgba(255,255,255,0.1);
