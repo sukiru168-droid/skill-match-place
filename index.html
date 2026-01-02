@@ -354,6 +354,20 @@
     white-space: normal;
   }
 
+   .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 90%;        /* ← 横幅を広げて4行化を防ぐ */
+    margin: 12px auto 0;
+    white-space: normal;  /* ← 強制改行を解除 */
+    word-break: normal;
+  }
+
+  /* 強制改行が入っていた場合の保険 */
+  .hero-description::after {
+    content: none;
+  }
+
   /* ===== ボタン ===== */
   .hero-buttons a {
     display: block;
@@ -402,7 +416,8 @@
     display: block;
   }
 
-/* ===== ヒーロー外 見出し（スマホ・最強） ===== */
+  
+  /* ===== ヒーロー外 見出し（スマホ・最強） ===== */
 .section-title {
   font-size: 1.6rem;
   line-height: 1.2;
@@ -426,6 +441,26 @@ h2.section-title::after {
   height: 0.75em;
   opacity: 0.9;
 }
+
+  .flow-compare {
+    grid-template-columns: 1fr; /* ← 縦並びに変更 */
+    gap: 32px;
+  }
+
+  .flow {
+    text-align: left;
+  }
+
+  .flow h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .flow p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }
   /* ===== βキャンペーン ===== */
 .beta-campaign {
