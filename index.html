@@ -418,7 +418,6 @@
   
   /* ===== ヒーロー外 見出し（スマホ・最強） ===== */
 .section-title {
-  font-size: 1.6rem;
   line-height: 1.2;
   font-weight: 900;
   letter-spacing: -0.02em;
@@ -431,7 +430,6 @@
 
 /* h2専用（完全一致で上書き） */
 h2.section-title {
-  font-size: 1.6rem !important;
   line-height: 1.2;
   font-weight: 900;
 }
@@ -442,7 +440,7 @@ h2.section-title::after {
 }
 
   .flow-compare {
-    grid-template-columns: 1fr; /* ← 縦並びに変更 */
+    grid-template-columns: 1fr;
     gap: 32px;
   }
 
@@ -462,16 +460,16 @@ h2.section-title::after {
   }
 
   .flow-grid {
-    grid-template-columns: 1fr;   /* ← 縦並び */
+    grid-template-columns: 1fr;
     gap: 40px;
   }
 
   /* 区切り感を出す */
   .flow-column:first-child::after {
-    content: "⇅";
+    content: "クライアント ⇅ ワーカー";
     display: block;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 900;
     color: var(--sub-gold);
     margin: 24px 0;
