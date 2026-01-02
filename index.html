@@ -354,15 +354,15 @@
     white-space: normal;
   }
 
-  .hero-description {
+    .hero-description {
     font-size: 1rem;
     line-height: 1.6;
-    max-width: 95%;
+    max-width: 95%;      /* ← 横幅を広げる */
     margin: 16px auto 0;
     white-space: normal;
   }
 
-  /* スマホでは強制改行を無効化（←そのまま） */
+  /* スマホでは強制改行を無効化 */
   .hero-description br {
     display: none;
   }
@@ -415,16 +415,68 @@
     display: block;
   }
 
-  /* ===== クライアント／ワーカー（スマホのみ上下） ===== */
+  
+  /* ===== ヒーロー外 見出し（スマホ・最強） ===== */
+.section-title {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.section-title::after {
+  height: 0.75em;
+  opacity: 0.9;
+}
+
+/* h2専用（完全一致で上書き） */
+h2.section-title {
+  font-size: 1.6rem !important;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+h2.section-title::after {
+  height: 0.75em;
+  opacity: 0.9;
+}
+
   .flow-compare {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* ← 縦並びに変更 */
+    gap: 32px;
+  }
+
+  .flow {
+    text-align: left;
+  }
+
+  .flow h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .flow p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .flow-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;   /* ← 縦並び */
+    gap: 40px;
   }
 
-}　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+  /* 区切り感を出す */
+  .flow-column:first-child::after {
+    content: "⇅";
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--sub-gold);
+    margin: 24px 0;
+  }
+}　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
   /* ===== βキャンペーン ===== */
 .beta-campaign {
   background: rgba(255,255,255,0.1);
