@@ -606,15 +606,16 @@ section:not(.hero) ol {
       opacity: 0.85;
     }
 
-    .section-lead {
-  font-size: 1.15rem;      /* 少し小さめで収める */
-  line-height: 1.6;        /* 行間調整 */
-  max-width: 680px;         /* 横幅を制限 */
+  .section-lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 680px;
   margin: 30px auto 70px;
-  text-align: center;       /* 中央揃えにする場合 */
-  white-space: normal;      /* 折り返しを有効にする */
-  word-break: keep-all;
-  line-break: strict;
+  text-align: center;
+
+  /* ❌ 日本語改行を壊す指定は削除 */
+  /* word-break: keep-all; */
+  /* line-break: strict; */
 }
     
     /* ===== カード ===== */
