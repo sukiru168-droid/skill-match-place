@@ -556,14 +556,15 @@
 }
 
     /* ===== PC専用：最後の注意文だけ改行なし ===== */
-.beta-note:last-of-type {
-  white-space: nowrap;
-}
-
 .highlight {
   font-weight: 700;
 }
 
+    @media (min-width: 1025px) {
+  .beta-note:last-of-type {
+    white-space: nowrap;
+  }
+}
    /* ===== 共通セクション ===== */
     section:not(.hero) {
   padding: 80px 0;
@@ -756,12 +757,42 @@
       margin-bottom: 30px;
       color: #e6eaf0;
 }
-    .html {
+ html {
   scroll-behavior: smooth;
 }
 
-    .section {
-  scroll-margin-top: 70px; /* ヘッダー高さ(60px) + 余白 */
+section {
+  scroll-margin-top: 70px;
+}
+    /* ===== クライアント／ワーカー比較 ===== */
+
+/* PC：横並び */
+@media (min-width: 769px) {
+  .flow-compare {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .flow-divider {
+    width: 2px;
+    background: #eee;
+  }
+}
+
+/* スマホ：縦並び */
+@media (max-width: 768px) {
+  .flow-compare {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .flow-divider {
+    display: none;
+  }
 }
     
   </style>
@@ -902,31 +933,33 @@
         わかりやすく比較できます。
       </p>
 
-      <div class="flow-grid">
-        <!-- クライアント -->
-        <div class="flow-column">
-          <h3>クライアント</h3>
-          <ol>
-            <li>案件を作成・公開</li>
-            <li>応募者と条件を相談</li>
-            <li>契約後、報酬を仮押さえ</li>
-            <li>納品物を確認・検収</li>
-            <li>支払い完了</li>
-          </ol>
-        </div>
+ <div class="flow-compare">
 
-        <!-- ワーカー -->
-        <div class="flow-column">
-          <h3>ワーカー</h3>
-          <ol>
-            <li>プロフィールを作成</li>
-            <li>案件に応募</li>
-            <li>契約成立</li>
-            <li>作業・納品</li>
-            <li>報酬を受け取る</li>
-          </ol>
-        </div>
-      </div>
+  <div class="flow-column">
+    <h3>クライアント</h3>
+    <ol>
+      <li>案件を作成・公開</li>
+      <li>応募者と条件を相談</li>
+      <li>契約後、報酬を仮押さえ</li>
+      <li>納品物を確認・検収</li>
+      <li>支払い完了</li>
+    </ol>
+  </div>
+
+  <div class="flow-divider"></div>
+
+  <div class="flow-column">
+    <h3>ワーカー</h3>
+    <ol>
+      <li>プロフィールを作成</li>
+      <li>案件に応募</li>
+      <li>契約成立</li>
+      <li>作業・納品</li>
+      <li>報酬を受け取る</li>
+    </ol>
+  </div>
+      
+</div>
     </div>
   </section>
 
