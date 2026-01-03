@@ -477,6 +477,16 @@
     height: 0.75em;
     opacity: 0.9;
   }
+
+  /* ===== セクション説明文（スマホ最適化） ===== */
+.section-lead {
+  font-size: 0.95rem;          /* 少しだけ小さく */
+  line-height: 1.7;            /* 読みやすさ維持 */
+  max-width: 92%;              /* スマホ画面にフィット */
+  margin: 20px auto 48px;      /* 余白を調整 */
+  white-space: normal;         /* 自然な折り返し */
+  word-break: break-word;      /* はみ出し防止 */
+ }
 }
   /* ===== PC ===== */
 @media (min-width: 1025px) {
