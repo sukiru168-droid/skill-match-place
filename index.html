@@ -478,13 +478,19 @@
     opacity: 0.9;
   }
 
- .section-lead {
+.section-lead {
     width: 100%;
-    max-width: 100%;
-    padding: 0 16px;          /* 画面端から逃がす */
-    box-sizing: border-box;   /* ← これが決定打 */
+    max-width: 520px;        /* ← 読みやすい行幅に制限 */
+    margin: 20px auto 48px;  /* 中央配置は維持 */
+    padding: 0 16px;
+
+    text-align: left;        /* ★ ここが一番重要 */
+    line-height: 1.8;        /* 日本語LPの黄金比 */
+    letter-spacing: 0.02em;  /* 詰まり感を軽減 */
+
+    box-sizing: border-box;
     white-space: normal;
-    overflow-wrap: anywhere;  /* 日本語でも強制改行 */
+    overflow-wrap: anywhere;
   }
 }
   /* ===== PC ===== */
