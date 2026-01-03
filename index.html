@@ -500,9 +500,15 @@
 
   white-space: normal;
   overflow-wrap: break-word;
-  display: none;
  }
 }
+
+  @media (max-width: 768px) {
+  section:not(.hero) .section-lead br {
+    display: none;
+  }
+}
+
   /* ===== PC ===== */
 @media (min-width: 1025px) {
   .flow-grid {
@@ -816,8 +822,7 @@
   <div class="container">
     <h2 class="section-title">スキルマッチングとは</h2>
     <p class="section-lead">
-  スキルマッチングは、オンライン完結型の専門スキル特化プラットフォームです。<br>
-  スキルを売りたい人と、必要とする人を安心・安全につなぎます。
+  スキルマッチングは、オンライン完結型の専門スキル特化プラットフォームです。<br>スキルを売りたい人と、必要とする人を安心・安全につなぎます。
 　　</p>
       <div class="card-grid">
         <div class="card">
