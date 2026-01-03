@@ -478,24 +478,27 @@
     opacity: 0.9;
   }
 
- /* セクション説明文（ヒーロー外） */
-  .section-lead {
-    text-align: left;          /* 左揃え */
-    max-width: 520px;          /* 行が長くなりすぎない */
-    margin: 20px auto 48px;
-    padding: 0 16px;
-
-    line-height: 1.9;          /* 自然な段落感 */
-    letter-spacing: 0.02em;
-
-    box-sizing: border-box;
-    white-space: normal;
-    overflow-wrap: anywhere;
+ section:not(.hero) {
+    text-align: left;
   }
 
-  /* 強制改行をスマホだけ解除 */
-  .section-lead br {
-    display: none;
+  section:not(.hero) .section-title {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  section:not(.hero) .section-lead {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+
+    max-width: none;          /* 幅制限を解除 */
+    padding: 0 16px;          /* 画面端だけガード */
+    line-height: 1.8;
+
+    white-space: normal;      /* 自然改行 */
+    overflow-wrap: break-word;
   }
 }
   /* ===== PC ===== */
