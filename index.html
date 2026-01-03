@@ -406,8 +406,8 @@
 
   /* ===== クライアント／ワーカー（スマホ縦並び） ===== */
   .flow-compare {
-  display: flex;              /* ← Flexだけ使う */
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   gap: 32px;
 }
 
@@ -442,15 +442,8 @@
     line-height: 1.6;
   }
 
-  /* ===== 区切り表示 ===== */
-  .flow-column:first-child::after {
-    content: "⇅";
-    display: block;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--sub-gold);
-    margin: 24px 0;
+  .flow-divider {
+    display: none !important;
   }
 
   /* ===== ヒーロー外 見出し（スマホ最適） ===== */
