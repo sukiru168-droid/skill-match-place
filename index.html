@@ -293,6 +293,13 @@
   .section-title {
     font-size: 2.2rem;
   }
+    .flow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
 
 /* ===== スマホ（768px以下） ===== */
@@ -423,6 +430,7 @@
 }
 
   .flow-grid {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -468,6 +476,14 @@
   h2.section-title::after {
     height: 0.75em;
     opacity: 0.9;
+  }
+}
+  /* ===== PC ===== */
+@media (min-width: 1025px) {
+  .flow-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin: 0 auto;
   }
 }
   /* ===== βキャンペーン ===== */
