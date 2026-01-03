@@ -478,19 +478,24 @@
     opacity: 0.9;
   }
 
-.section-lead {
-    text-align: left !important;   /* ← 決定打 */
-    
-    max-width: 520px;
+ /* セクション説明文（ヒーロー外） */
+  .section-lead {
+    text-align: left;          /* 左揃え */
+    max-width: 520px;          /* 行が長くなりすぎない */
     margin: 20px auto 48px;
     padding: 0 16px;
 
-    line-height: 1.8;
+    line-height: 1.9;          /* 自然な段落感 */
     letter-spacing: 0.02em;
 
     box-sizing: border-box;
     white-space: normal;
     overflow-wrap: anywhere;
+  }
+
+  /* 強制改行をスマホだけ解除 */
+  .section-lead br {
+    display: none;
   }
 }
   /* ===== PC ===== */
