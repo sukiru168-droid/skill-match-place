@@ -492,7 +492,7 @@
   text-align: left;
 
   max-width: 32em;        /* ← 日本語に最適な行幅 */
-  margin: 20px 16px 48px; /* ← 左から自然に開始 */
+  margin: 20px 0 48px; /* ← 左から自然に開始 */
   padding: 0;
 
   line-height: 1.9;       /* 段落として自然 */
@@ -501,6 +501,23 @@
   white-space: normal;
   overflow-wrap: break-word;
  }
+
+
+  /* ===== ヒーロー外：本文は左スタート＋自然改行 ===== */
+section:not(.hero) p,
+section:not(.hero) ul,
+section:not(.hero) ol {
+  max-width: 32em;        /* 日本語に最適な行長 */
+  margin-left: 16px;     /* 左スタートを明示 */
+  margin-right: 16px;    /* 右端に張り付かない */
+  margin-bottom: 1.6em;
+
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
 }
 
   @media (max-width: 768px) {
