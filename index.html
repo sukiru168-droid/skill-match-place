@@ -489,17 +489,18 @@
   }
 
   section:not(.hero) .section-lead {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
+  text-align: left;
 
-    max-width: none;          /* 幅制限を解除 */
-    padding: 0 16px;          /* 画面端だけガード */
-    line-height: 1.8;
+  max-width: 32em;        /* ← 日本語に最適な行幅 */
+  margin: 20px 16px 48px; /* ← 左から自然に開始 */
+  padding: 0;
 
-    white-space: normal;      /* 自然改行 */
-    overflow-wrap: break-word;
-  }
+  line-height: 1.9;       /* 段落として自然 */
+  letter-spacing: 0.02em;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
 }
   /* ===== PC ===== */
 @media (min-width: 1025px) {
