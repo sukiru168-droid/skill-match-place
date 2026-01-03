@@ -489,18 +489,15 @@
   }
 
   section:not(.hero) .section-lead {
-  text-align: left;
+    max-width: 32em;
+    margin: 20px 16px 48px; /* 左スタート維持 */
+    text-align: left;
 
-  max-width: 32em;        /* ← 日本語に最適な行幅 */
-  margin: 20px 0 48px; /* ← 左から自然に開始 */
-  padding: 0;
-
-  line-height: 1.9;       /* 段落として自然 */
-  letter-spacing: 0.02em;
-
-  white-space: normal;
-  overflow-wrap: break-word;
- }
+    white-space: normal;
+    word-break: normal;
+    line-break: auto;
+    overflow-wrap: break-word;
+  }
 
 
   /* ===== ヒーロー外：本文は左スタート＋自然改行 ===== */
