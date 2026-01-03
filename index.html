@@ -406,9 +406,21 @@
 
   /* ===== クライアント／ワーカー（スマホ縦並び） ===== */
   .flow-compare {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+  display: flex;              /* ← Flexだけ使う */
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 中の流れは縦（1→2→3→4→5） */
+.flow ol {
+  display: block;
+  padding-left: 1.2em;
+}
+
+.flow li {
+  display: list-item;
+  margin-bottom: 12px;
+}
 
   .flow-grid {
     grid-template-columns: 1fr;
